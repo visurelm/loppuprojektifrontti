@@ -23,6 +23,9 @@ class Users extends Component{
             return <tr key={user._id}>
                 <td>{user.username}</td>
                 <td>{user.id}</td>
+                <td>{user.role}</td>
+                <td>{user.points}</td>
+                <td>{user.groupId}</td>
             </tr>
         });
         return (
@@ -31,6 +34,9 @@ class Users extends Component{
                 <tr>
                     <td>userName</td>
                     <td>userID</td>
+                    <td>role</td>
+                    <td>points</td>
+                    <td>groupId</td>
                 </tr>
                 </thead>
                 <tbody>{userit}</tbody>
