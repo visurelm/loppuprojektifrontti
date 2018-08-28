@@ -26,6 +26,7 @@ class Users extends Component{
                 <td>{user.role}</td>
                 <td>{user.points}</td>
                 <td>{user.groupId}</td>
+                <td>{user.completedTask}</td>
             </tr>
         });
         return (
@@ -37,6 +38,7 @@ class Users extends Component{
                     <td>role</td>
                     <td>points</td>
                     <td>groupId</td>
+                    <td>completedTasks</td>
                 </tr>
                 </thead>
                 <tbody>{userit}</tbody>
