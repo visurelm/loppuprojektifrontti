@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import Auth from './Auth';
+import Auth from './Authentication/Auth';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 const auth = new Auth();
 let state = {};

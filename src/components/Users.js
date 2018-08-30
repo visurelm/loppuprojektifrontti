@@ -9,7 +9,7 @@ class Users extends Component{
     }
 
     componentDidMount() {
-        axios.get("http://localhost:8080/users")
+        axios.get("/users")
             .then(res => {
                 const users = res.data;
                 console.log(users);
