@@ -45,7 +45,6 @@ class Users extends Component{
             </table>
         );
     }
-
 }
 
 export default Users;

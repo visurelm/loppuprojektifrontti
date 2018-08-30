@@ -8,7 +8,8 @@ import LoadingCallback from './components/LoadingCallback';
 import NotFound from './components/NotFound';
 import Auth from "./Authentication/Auth";
 import MakeMainRoutes from "./routes";
-import Navigation, {NavDropdown, NavItem} from './components/Navigation'
+// import Navigation, {NavDropdown, NavItem} from './components/Navigation'
+import Navigation from './Navigation';
 
 
 export default class App extends Component {
