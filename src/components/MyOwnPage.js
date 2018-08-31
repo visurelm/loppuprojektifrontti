@@ -13,23 +13,31 @@ class MyOwnPage extends Component {
         axios.defaults.headers.common = {
             Authorization: "Bearer " + localStorage.getItem("access_token")
         };
-        axios.get("/users/18/id")
-        // axios.get("/users/auth0|5b87943afe13090f5ffd652b/id")
+        axios.get()
+        // axios.get("/users/18/id")
+        axios.get("/api/user")
             .then(res => {
-                let user = res.data;
-                console.log(user);
-                //TODO jos user.username==null niin ohjaa johonkin.
-                if (user.username!==null) {
-                    user.completedtasks.push("Jermuilu");
-                    console.log(user)
-                    axios.get("groups/" + user.groupId)
-                        .then(res => {
-                            const group = res.data;
-                            console.log(group)
-                            user.groupname = group.groupname;
-                            this.setState({user: user})
-                        });
-                }
+                return res.data;
+            })
+            .then(res => {
+                console.log(res);
+                axios.get("/users/" + res.name + "/id")
+                    .then(res => {
+                        let user = res.data;
+                        console.log(user);
+                        //TODO jos user.username==null niin ohjaa johonkin.
+                        if (user.username !== null) {
+                            user.completedtasks.push("Jermuilu");
+                            console.log(user)
+                            axios.get("groups/" + user.groupId)
+                                .then(res => {
+                                    const group = res.data;
+                                    console.log(group)
+                                    user.groupname = group.groupname;
+                                    this.setState({user: user})
+                                });
+                        }
+                    })
             });
 
     }
@@ -66,8 +74,8 @@ class MyOwnPage extends Component {
                     <tr>
                         <td>Tehdyt tehtävät:</td>
                         <td>
-                            {this.state.user.completedtasks!==undefined && <ul>{this.listCompletedTasks()}</ul>}
-                            {this.state.user.completedtasks===undefined && <p>{this.listCompletedTasks()}</p>}
+                            {this.state.user.completedtasks !== undefined && <ul>{this.listCompletedTasks()}</ul>}
+                            {this.state.user.completedtasks === undefined && <p>{this.listCompletedTasks()}</p>}
                         </td>
                     </tr>
                     </tbody>
