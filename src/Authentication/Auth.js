@@ -13,7 +13,7 @@ export default class Auth {
         redirectUri: 'http://localhost:3000/callback',
         audience: 'http://elsa',
         responseType: 'token id_token',
-        scope: 'read:users'
+        scope: 'openid profile email'
     });
 
     constructor() {
@@ -58,6 +58,7 @@ export default class Auth {
         // navigate to the home route
         history.replace('/');
         location.pathname  = LOGIN_FAILURE_PAGE;
+        this.auth0.logout({returnTo: 'http://localhost:3000'});
     }
 
     isAuthenticated() {
