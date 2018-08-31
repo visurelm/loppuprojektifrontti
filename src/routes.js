@@ -8,7 +8,7 @@ import history from './history';
 import Users from './components/Users';
 import MyOwnPage from "./components/MyOwnPage";
 import Logout from './components/LogOut';
-import Games from './games/games';
+import Games from './components/Games';
 import SumGame from './games/sumgame/game';
 import NotFound from "./components/NotFound";
 

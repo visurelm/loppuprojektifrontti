@@ -9,9 +9,9 @@ class Home extends Component{
 
 
             <div className="Homepage">
-                <Navcubes/>
-                {!this.props.auth.isAuthenticated() && <h1>Moro, kirjaudu!</h1>}
 
+                {!this.props.auth.isAuthenticated() && <h1 align="center">Moro, kirjauduppa &uarr; !</h1>}
+                <Navcubes/>
             </div>
         );
     }
