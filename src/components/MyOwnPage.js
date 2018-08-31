@@ -3,20 +3,49 @@ import axios from 'axios';
 
 class MyOwnPage extends Component {
 
-    state = {user:[]};
+    state = {user: {}};
 
     getUser = () => {
         this.componentDidMount();
-    }
+    };
 
     componentDidMount() {
+        axios.defaults.headers.common = {
+            Authorization: "Bearer " + localStorage.getItem("access_token")
+        };
         axios.get("/users/18/id")
+        // axios.get("/users/auth0|5b87943afe13090f5ffd652b/id")
             .then(res => {
-                const user = res.data;
+                let user = res.data;
                 console.log(user);
-                this.setState({user});
-            })
+                //TODO jos user.username==null niin ohjaa johonkin.
+                if (user.username!==null) {
+                    user.completedtasks.push("Jermuilu");
+                    console.log(user)
+                    axios.get("groups/" + user.groupId)
+                        .then(res => {
+                            const group = res.data;
+                            console.log(group)
+                            user.groupname = group.groupname;
+                            this.setState({user: user})
+                        });
+                }
+            });
+
     }
+
+    listCompletedTasks = () => {
+        let completed = this.state.user.completedtasks;
+        if (completed !== undefined && completed.length > 0) {
+            return completed.map((task) => {
+                return <li>{task}</li>;
+
+            })
+        }
+        else {
+            return "Ei vielä tehtyjä tehtäviä."
+        }
+    };
 
 
     render() {
@@ -24,7 +53,26 @@ class MyOwnPage extends Component {
         return (
             <div>
                 <p>Tänne tulee käyttäjän omat tiedot</p>
-                <button href="/">Palaa etusivulle</button>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>Nimi:</td>
+                        <td>{this.state.user.username}</td>
+                    </tr>
+                    <tr>
+                        <td>Opetusryhmä:</td>
+                        <td>{this.state.user.groupname}</td>
+                    </tr>
+                    <tr>
+                        <td>Tehdyt tehtävät:</td>
+                        <td>
+                            {this.state.user.completedtasks!==undefined && <ul>{this.listCompletedTasks()}</ul>}
+                            {this.state.user.completedtasks===undefined && <p>{this.listCompletedTasks()}</p>}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                {/*<button href="/">Palaa etusivulle</button>*/}
             </div>
         );
     }
