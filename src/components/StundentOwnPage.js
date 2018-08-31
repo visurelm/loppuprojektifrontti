@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-class MyOwnPage extends Component {
+class StundentOwnPage extends Component {
 
     state = {user: {}};
 
@@ -13,7 +13,7 @@ class MyOwnPage extends Component {
         axios.defaults.headers.common = {
             Authorization: "Bearer " + localStorage.getItem("access_token")
         };
-        axios.get()
+        // axios.get()
         // axios.get("/users/18/id")
         axios.get("/api/user")
             .then(res => {
@@ -86,4 +86,4 @@ class MyOwnPage extends Component {
     }
 }
 
-export default MyOwnPage;
+export default StundentOwnPage;
