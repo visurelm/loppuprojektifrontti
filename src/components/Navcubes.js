@@ -14,10 +14,7 @@ const Navcubes = () => (
             <Col sm={3}><a href="/Logout"><img src={letterL} alt="letterL"/></a></Col>
             <Col sm={3}><a href="/users"><img src={letterS} alt="letterS"/></a></Col>
             <Col sm={3}><a href="/MyOwnPage"><img src={letterA} alt="letterA"/></a></Col>
-        </Row> {/*<img src={letterE} alt="letterE"/>*/}
-        {/*<img src={letterL} alt="letterL"/>*/}
-        {/*<img src={letterS} alt="letterS"/>*/}
-        {/*<img src={letterA} alt="letterA"/>*/}
+        </Row>
     </div>
 )
 

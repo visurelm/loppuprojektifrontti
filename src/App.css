@@ -60,3 +60,6 @@ table thead {font-weight: bold;}
 .timer-value {
   color: darkgreen; font-size: 2rem;
 }
+.App-page {
+    background-color: pink;
+}

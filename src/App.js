@@ -22,7 +22,7 @@ export default class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className="App-page">
                 <Navigation auth={this.auth}/>
                 <MakeMainRoutes auth={this.auth} handleAuthentication={this.handleAuthentication}/>
             </div>
