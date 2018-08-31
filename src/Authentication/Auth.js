@@ -11,9 +11,9 @@ export default class Auth {
         domain: 'jermu.eu.auth0.com',
         clientID: 'etTCTSDZi6ev3eKQomKUA23YEwE0D7mw',
         redirectUri: 'http://localhost:3000/callback',
-        audience: 'https://jermu.eu.auth0.com/userinfo',
+        audience: 'http://elsa',
         responseType: 'token id_token',
-        scope: 'openid'
+        scope: 'read:users'
     });
 
     constructor() {
