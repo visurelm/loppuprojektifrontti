@@ -8,7 +8,6 @@ import LoadingCallback from './components/LoadingCallback';
 import NotFound from './components/NotFound';
 import Auth from "./Authentication/Auth";
 import MakeMainRoutes from "./routes";
-// import Navigation, {NavDropdown, NavItem} from './components/Navigation'
 import Navigation from './Navigation';
 
 
@@ -22,7 +21,7 @@ export default class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className="App-page">
                 <Navigation auth={this.auth}/>
                 <MakeMainRoutes auth={this.auth} handleAuthentication={this.handleAuthentication}/>
             </div>
@@ -31,21 +30,3 @@ export default class App extends Component {
 };
 
 
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <img className="App-logo" alt="logo" />
-//           <h1 className="App-title">Welcome to React</h1>
-//         </header>
-//         <p className="App-intro">
-//           To get started, edit <code>src/App.js</code> and save to reload.
-//         </p>
-//           <Home/>
-//       </div>
-//     );
-//   }
-// }
-//
-// export default App;
