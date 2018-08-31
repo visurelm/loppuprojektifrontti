@@ -8,7 +8,8 @@ import LoadingCallback from './components/LoadingCallback';
 import NotFound from './components/NotFound';
 import Auth from "./Authentication/Auth";
 import MakeMainRoutes from "./routes";
-import Navigation, {NavDropdown, NavItem} from './components/Navigation'
+// import Navigation, {NavDropdown, NavItem} from './components/Navigation'
+import Navigation from './Navigation';
 
 
 export default class App extends Component {
@@ -22,14 +23,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                {!this.auth.isAuthenticated() &&
-                <div>
-                    Kirjaudu ensin poeka!
-                    <hr/>
-                    <button onClick={this.auth.login}>Login</button>
-                </div>}
-                <Navigation/>
-                {this.auth.isAuthenticated() && <button onClick={this.auth.logout}>Logout</button>}
+                <Navigation auth={this.auth}/>
                 <MakeMainRoutes auth={this.auth} handleAuthentication={this.handleAuthentication}/>
             </div>
         );
