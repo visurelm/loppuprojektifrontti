@@ -19,6 +19,10 @@ class Navigation extends Component {
                         <NavItem eventKey={3} href="/MyOwnPage">Samoin tähän</NavItem>
                         <NavItem eventKey={3} href="/Jermuiluja">Jermujen pesä</NavItem>
                         <NavDropdown eventKey={5} title="Tähn tulee pelit" id="pelidropdown"></NavDropdown>
+                        {!this.props.auth.isAuthenticated() &&
+                            <button onClick={this.props.auth.login}>Login</button>}
+                        {this.props.auth.isAuthenticated() && <button onClick={this.props.auth.logout}>Logout</button>}
+
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

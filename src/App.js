@@ -23,14 +23,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                {!this.auth.isAuthenticated() &&
-                <div>
-                    Kirjaudu ensin poeka!
-                    <hr/>
-                    <button onClick={this.auth.login}>Login</button>
-                </div>}
-                <Navigation/>
-                {this.auth.isAuthenticated() && <button onClick={this.auth.logout}>Logout</button>}
+                <Navigation auth={this.auth}/>
                 <MakeMainRoutes auth={this.auth} handleAuthentication={this.handleAuthentication}/>
             </div>
         );
