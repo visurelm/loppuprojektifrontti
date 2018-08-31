@@ -17,10 +17,11 @@ class Navigation extends Component {
                         <NavItem eventKey={1} href="/">Etusivu</NavItem>
                         <NavItem eventKey={2} href="/Users">Users</NavItem>
                         <NavItem eventKey={3} href="/MyOwnPage">Samoin tähän</NavItem>
-                        <NavItem eventKey={4} href="/Jermuiluja">Jermujen pesä</NavItem>
-                        <NavDropdown eventKey={5} title="Tähän tulee pelit" id="pelidropdown">
-                            <MenuItem eventKey={5.1}>Muistipeli</MenuItem>
-                            <MenuItem eventKey={5.2} href="/games/sumgame">Summapeli</MenuItem>
+                        <NavItem eventKey={4} href="/TeachersView">Open oma</NavItem>
+                        <NavItem eventKey={5} href="/Jermuiluja">Jermujen pesä</NavItem>
+                        <NavDropdown eventKey={6} title="Tähän tulee pelit" id="pelidropdown">
+                            <MenuItem eventKey={6.1}>Muistipeli</MenuItem>
+                            <MenuItem eventKey={6.2} href="/games/sumgame">Summapeli</MenuItem>
                         </NavDropdown>
                         {!this.props.auth.isAuthenticated() &&
                         <button onClick={this.props.auth.login}>Login</button>}
