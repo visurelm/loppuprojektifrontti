@@ -29,7 +29,7 @@ class MyOwnPage extends Component {
                         if (user.username !== null) {
                             user.completedtasks.push("Jermuilu");
                             console.log(user)
-                            axios.get("groups/" + user.groupId)
+                            axios.get("groups/" + user.groupid)
                                 .then(res => {
                                     const group = res.data;
                                     console.log(group)
