@@ -6,37 +6,27 @@ import Home from './components/Home';
 import Users from './components/Users';
 import LoadingCallback from './components/LoadingCallback';
 import NotFound from './components/NotFound';
+import Auth from "./Authentication/Auth";
+import MakeMainRoutes from "./routes";
+// import Navigation, {NavDropdown, NavItem} from './components/Navigation'
+import Navigation from './Navigation';
 
 
 export default class App extends Component {
-    render() {
-        let mainComponent = "";
-        switch (this.props.location) {
-            case "":
-                mainComponent = this.props.auth.isAuthenticated() ? <Home {...this.props}/> : <div></div>;
-                break;
-            case "callback":
-                mainComponent = <LoadingCallback/>
-                break;
-            case "Users":
-                mainComponent = this.props.auth.isAuthenticated() ? <Users/> : <NotFound/>;
-                break;
-            default:
-                mainComponent = <NotFound/>
-
+    auth = new Auth();
+    handleAuthentication = (nextState, replace) => {
+        if (/access_token|id_token|error/.test(nextState.location.hash)) {
+            this.auth.handleAuthentication();
         }
-        return <div>
-            {!this.props.auth.isAuthenticated() &&
-            <div>
-                {this.props.auth.isAuthenticated()}
-                Kirjaudu ensin poeka!
-                <hr/>
-                <button onClick={this.props.auth.login}>Login</button>
-            </div>}
-            {this.props.auth.isAuthenticated() && <button onClick={this.props.auth.logout}>Logout</button>}
-            {mainComponent}
+    };
 
-        </div>
+    render() {
+        return (
+            <div>
+                <Navigation auth={this.auth}/>
+                <MakeMainRoutes auth={this.auth} handleAuthentication={this.handleAuthentication}/>
+            </div>
+        );
     }
 };
 

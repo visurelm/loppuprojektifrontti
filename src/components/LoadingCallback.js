@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Auth from '../Auth';
+import Auth from '../Authentication/Auth';
 
 export default class LoadingCallback extends Component{
     componentDidMount(){
