@@ -10,10 +10,10 @@ import './Navcubes.css';
 const Navcubes = () => (
     <div className="navcubes">
         <Row>
-            <Col sm={3}><a href="/"><img src={letterE} alt="letterE"/></a></Col>
-            <Col sm={3}><a href="/Logout"><img src={letterL} alt="letterL"/></a></Col>
-            <Col sm={3}><a href="/users"><img src={letterS} alt="letterS"/></a></Col>
-            <Col sm={3}><a href="/MyOwnPage"><img src={letterA} alt="letterA"/></a></Col>
+            <Col xs={3}><a href="/"><img src={letterE} alt="letterE"/></a></Col>
+            <Col xs={3}><a href="/Logout"><img src={letterL} alt="letterL"/></a></Col>
+            <Col xs={3}><a href="/users"><img src={letterS} alt="letterS"/></a></Col>
+            <Col xs={3}><a href="/MyOwnPage"><img src={letterA} alt="letterA"/></a></Col>
         </Row>
     </div>
 )
