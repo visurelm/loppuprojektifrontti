@@ -13,6 +13,7 @@ import Games from './components/Games';
 import SumGame from './games/sumgame/game';
 import NotFound from "./components/NotFound";
 import PomojenPomot from "./groups/PomojenPomot";
+import SignUpPage from "./components/SignUpPage";
 
 
 export default class MakeMainRoutes extends React.Component {
@@ -42,6 +43,7 @@ export default class MakeMainRoutes extends React.Component {
                                 this.props.handleAuthentication(props);
                                 return <LoadingCallback {...props} />
                             }}/>
+                            <Route exact path="/jermu/add" render={(props)=><SignUpPage auth={this.props.auth} {...props}/>}/>
                             <Route component={NotFound}/>
                         </Switch>
                     </div>

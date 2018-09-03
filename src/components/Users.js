@@ -18,7 +18,7 @@ class Users extends Component{
                 const users = res.data;
                 console.log(users);
                 this.setState({users});
-            })
+            });
     }
 
     render() {
