@@ -1,5 +1,6 @@
 import auth0 from 'auth0-js';
 import history from '../history';
+import axios from "axios/index";
 
 /*eslint no-restricted-globals: 0*/
 
@@ -16,6 +17,17 @@ export default class Auth {
         scope: 'openid profile email'
     });
 
+    randomint = 0;
+
+    getrandomint = ()=>{
+        axios.defaults.headers.common = {
+            Authorization: "Bearer " + localStorage.getItem("access_token")
+        };
+        this.randomint = axios.get("/users").then((r)=>{return r.data.length});
+        console.log("Uusi luku:" ,this.randomint)
+    };
+
+
     constructor() {
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
@@ -25,7 +37,7 @@ export default class Auth {
 
     login() {
         this.auth0.authorize();
-    }
+    };
 
     handleAuthentication() {
         this.auth0.parseHash((err, authResult) => {
@@ -40,14 +52,47 @@ export default class Auth {
         });
     }
 
+    signUpStudent(username, password, email) {
+        this.getrandomint();
+    // signUpStudent(username, password, email,groupid,contactpersonuserid) {
+        let emailtopush = email ? email : "elsa" + (this.randomint++) + "@elsa.fi"
+        let added = this.auth0.signup({
+            connection: "Username-Password-Authentication",
+            email: emailtopush,
+            username: username,
+            password: password,
+            user_metadata: {role: "student"},
+            app_metadata: {role: "student"}
+        }, function (err, o) {
+            if (err) {
+                console.log(err);
+            }
+            else {
+                axios.defaults.headers.common = {
+                    Authorization: "Bearer " + localStorage.getItem("access_token")
+                };
+                axios.post("/users",{
+                    username: o.username,
+                    role: "Student",
+                    points: 0,
+                    groupid: 1,
+                    completedtasks: [],
+                    contactpersonuserid: 18,
+                    testid: "auth0|" + o.id
+                });
+            }
+        }, (err) => {
+            throw err;
+        });
+        console.log("Lisättiin", added);
+    };
+
     setSession(authResult) {
         // Set the time that the Access Token will expire at
         let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
         localStorage.setItem('access_token', authResult.accessToken);
         localStorage.setItem('id_token', authResult.idToken);
         localStorage.setItem('expires_at', expiresAt);
-        // navigate to the home route
-        // history.replace('/');
     }
 
     logout() {
@@ -57,7 +102,7 @@ export default class Auth {
         localStorage.removeItem('expires_at');
         // navigate to the home route
         history.replace('/');
-        location.pathname  = LOGIN_FAILURE_PAGE;
+        location.pathname = LOGIN_FAILURE_PAGE;
         this.auth0.logout({returnTo: 'http://localhost:3000'});
     }
 
@@ -68,32 +113,4 @@ export default class Auth {
         return new Date().getTime() < expiresAt;
     }
 
-    // handleAuthentication() {
-    //     this.auth0.parseHash((err, authResult) => {
-    //         if (authResult && authResult.accessToken && authResult.idToken) {
-    //             let expiresAt = JSON.stringify((authResult.expiresIn) * 1000 + new Date().getTime());
-    //             sessionStorage.setItem("access-token", authResult.accessToken);
-    //             sessionStorage.setItem("id_token", authResult.idToken);
-    //             sessionStorage.setItem("expires_at", expiresAt);
-    //             location.hash = "";
-    //             location.pathname = LOGIN_SUCCESS_PAGE;
-    //         } else if (err) {
-    //             location.pathname = LOGIN_FAILURE_PAGE;
-    //             console.log(err);
-    //         }
-    //     })
-    // };
-    //
-    // logout() {
-    //     sessionStorage.removeItem("access-token");
-    //     sessionStorage.removeItem("id_token");
-    //     sessionStorage.removeItem("expires_at");
-    //
-    //     location.pathname = LOGIN_FAILURE_PAGE;
-    // }
-    //
-    // isAuthenticated() {
-    //     let expiresAt = JSON.parse(sessionStorage.getItem("expires_at"));
-    //     return new Date().getTime() < expiresAt;
-    // }
 }
