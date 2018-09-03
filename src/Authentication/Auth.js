@@ -19,12 +19,14 @@ export default class Auth {
 
     randomint = 0;
 
-    getrandomint = ()=>{
+    getrandomint = () => {
         axios.defaults.headers.common = {
             Authorization: "Bearer " + localStorage.getItem("access_token")
         };
-        this.randomint = axios.get("/users").then((r)=>{return r.data.length});
-        console.log("Uusi luku:" ,this.randomint)
+        this.randomint = axios.get("/users").then((r) => {
+            return r.data.length
+        });
+        console.log("Uusi luku:", this.randomint)
     };
 
 
@@ -54,7 +56,7 @@ export default class Auth {
 
     signUpStudent(username, password, email) {
         this.getrandomint();
-    // signUpStudent(username, password, email,groupid,contactpersonuserid) {
+        // signUpStudent(username, password, email,groupid,contactpersonuserid) {
         let emailtopush = email ? email : "elsa" + (this.randomint++) + "@elsa.fi"
         let added = this.auth0.signup({
             connection: "Username-Password-Authentication",
@@ -71,7 +73,7 @@ export default class Auth {
                 axios.defaults.headers.common = {
                     Authorization: "Bearer " + localStorage.getItem("access_token")
                 };
-                axios.post("/users",{
+                axios.post("/users", {
                     username: o.username,
                     role: "Student",
                     points: 0,

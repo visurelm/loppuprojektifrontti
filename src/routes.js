@@ -10,7 +10,7 @@ import StundentOwnPage from "./components/StundentOwnPage";
 import TeachersView from "./components/TeachersView";
 import Logout from './components/LogOut';
 import Games from './components/Games';
-import SumGame from './games/sumgame/game';
+import SumGame from './games/sumgame/Sumgame';
 import NotFound from "./components/NotFound";
 import PomojenPomot from "./groups/PomojenPomot";
 import SignUpPage from "./components/SignUpPage";
@@ -37,8 +37,8 @@ export default class MakeMainRoutes extends React.Component {
                                 <SumGame auth={this.props.auth} {...props} />}/>
                             <Route exact path="/groups/PomojenPomot" render={(props) => this.props.auth.isAuthenticated() &&
                                 <PomojenPomot auth={this.props.auth} {...props} />}/>
-                            <Route path="/Logout" render={(props) => this.props.auth.isAuthenticated() &&
-                                <Logout auth={this.props.auth} {...props} />}/>
+                            <Route path="/SingUpPage" render={(props) => this.props.auth.isAuthenticated() &&
+                                <SignUpPage auth={this.props.auth} {...props} />}/>
                             <Route path="/callback" render={(props) => {
                                 this.props.handleAuthentication(props);
                                 return <LoadingCallback {...props} />
