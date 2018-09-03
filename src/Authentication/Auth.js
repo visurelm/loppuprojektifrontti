@@ -23,8 +23,7 @@ export default class Auth {
         axios.defaults.headers.common = {
             Authorization: "Bearer " + localStorage.getItem("access_token")
         };
-        this.randomint = axios.get("/users").then((r)=>{return r.data.length});
-        console.log("Uusi luku:" ,this.randomint)
+        this.randomint = axios.get("/users").then((r)=>{this.randomint =  r.data.length});
     };
 
 
@@ -33,6 +32,7 @@ export default class Auth {
         this.logout = this.logout.bind(this);
         this.handleAuthentication = this.handleAuthentication.bind(this);
         this.isAuthenticated = this.isAuthenticated.bind(this);
+        this.getrandomint();
     }
 
     login() {
@@ -52,8 +52,16 @@ export default class Auth {
         });
     }
 
+    testLogin(){
+        this.auth0.loginWithCredentials({
+            connection: 'Username-Password-Authentication',
+            username: 'Jermu',
+            password: 'Jermuilija1',
+            scope: 'openid profile email'
+        })
+    }
+
     signUpStudent(username, password, email) {
-        this.getrandomint();
     // signUpStudent(username, password, email,groupid,contactpersonuserid) {
         let emailtopush = email ? email : "elsa" + (this.randomint++) + "@elsa.fi"
         let added = this.auth0.signup({
@@ -61,13 +69,13 @@ export default class Auth {
             email: emailtopush,
             username: username,
             password: password,
-            user_metadata: {role: "student"},
-            app_metadata: {role: "student"}
+            app_metadata: {roles: "Student"}
         }, function (err, o) {
             if (err) {
                 console.log(err);
             }
             else {
+                console.log(o);
                 axios.defaults.headers.common = {
                     Authorization: "Bearer " + localStorage.getItem("access_token")
                 };
@@ -78,7 +86,7 @@ export default class Auth {
                     groupid: 1,
                     completedtasks: [],
                     contactpersonuserid: 18,
-                    testid: "auth0|" + o.id
+                    testid: "auth0|" + o.Id
                 });
             }
         }, (err) => {
