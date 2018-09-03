@@ -30,7 +30,7 @@ table {width: 90%;margin: 1em auto;}
 table thead {font-weight: bold;}
 
 .jumbotron{
-  background-color: pink;
+  background-color: #E06F8B;
 }
 .game {
   display: inline-flex; flex-direction: column;
@@ -61,5 +61,5 @@ table thead {font-weight: bold;}
   color: darkgreen; font-size: 2rem;
 }
 .App-page {
-    background-color: pink;
+    background-color: #E06F8B;
 }
