@@ -18,6 +18,7 @@ export default class NotFound extends Component {
 
     render(){
         return (
+
             <div>
                 Oh noes, not found...
                 <p style={{'color': 'red0'}}>User: {this.state.user || 'Ei ole (vielä)'}</p>

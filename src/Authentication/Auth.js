@@ -19,11 +19,13 @@ export default class Auth {
 
     randomint = 0;
 
-    getrandomint = ()=>{
+    getrandomint = () => {
         axios.defaults.headers.common = {
             Authorization: "Bearer " + localStorage.getItem("access_token")
         };
-        this.randomint = axios.get("/users").then((r)=>{this.randomint =  r.data.length});
+        this.randomint = axios.get("/users").then((r) => {
+            this.randomint = r.data.length
+        });
     };
 
 
@@ -39,6 +41,32 @@ export default class Auth {
         this.auth0.authorize();
     };
 
+    isTeacher = async () => {
+        if (this.isAuthenticated()) {
+            axios.defaults.headers.common = {
+                Authorization: "Bearer " + localStorage.getItem("access_token")
+            };
+            let role = false;
+            role = await axios.get("/api/user")
+                .then((r) => {
+                    return r.data.name
+                }).then((res) => {
+                    return axios.get("/users/" + res).then(res => {
+                        role = res.data.role === "CHIEF"
+                    })
+                        .then(() => {
+                            console.log(role);
+                            return role;
+                        });
+                });
+            return role;
+        }
+        else {
+            return false;
+        }
+
+    };
+
     handleAuthentication() {
         this.auth0.parseHash((err, authResult) => {
             if (authResult && authResult.accessToken && authResult.idToken) {
@@ -52,7 +80,7 @@ export default class Auth {
         });
     }
 
-    testLogin(){
+    testLogin() {
         this.auth0.loginWithCredentials({
             connection: 'Username-Password-Authentication',
             username: 'Jermu',
@@ -62,7 +90,7 @@ export default class Auth {
     }
 
     signUpStudent(username, password, email) {
-    // signUpStudent(username, password, email,groupid,contactpersonuserid) {
+        // signUpStudent(username, password, email,groupid,contactpersonuserid) {
         let emailtopush = email ? email : "elsa" + (this.randomint++) + "@elsa.fi"
         let added = this.auth0.signup({
             connection: "Username-Password-Authentication",
@@ -79,7 +107,7 @@ export default class Auth {
                 axios.defaults.headers.common = {
                     Authorization: "Bearer " + localStorage.getItem("access_token")
                 };
-                axios.post("/users",{
+                axios.post("/users", {
                     username: o.username,
                     role: "Student",
                     points: 0,
