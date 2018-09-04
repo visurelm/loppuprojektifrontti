@@ -1,9 +1,9 @@
 import React from 'react';
 import {Route, Router, Switch} from 'react-router-dom';
-import App from './App';
+// import App from './App';
 import Home from './components/Home';
 import LoadingCallback from './components/LoadingCallback';
-import Auth from './Authentication/Auth';
+// import Auth from './Authentication/Auth';
 import history from './history';
 import Users from './components/Users';
 import StundentOwnPage from "./components/StundentOwnPage";

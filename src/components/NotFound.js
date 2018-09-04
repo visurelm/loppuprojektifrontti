@@ -9,11 +9,13 @@ export default class NotFound extends Component {
         };
         axios.get("/api/user")
             .then(res => {
+                console.log(localStorage.getItem("access_token"));
                 const user = res.data;
                 console.log("USER", user);
                 this.setState({user: user.name});
             })
     }
+
     render(){
         return (
             <div>

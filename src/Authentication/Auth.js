@@ -69,7 +69,7 @@ export default class Auth {
             email: emailtopush,
             username: username,
             password: password,
-            app_metadata: {roles: "Student"}
+            app_metadata: {roles: "STUDENT"}
         }, function (err, o) {
             if (err) {
                 console.log(err);
@@ -84,9 +84,9 @@ export default class Auth {
                     role: "Student",
                     points: 0,
                     groupid: 1,
-                    completedtasks: [],
+                    completedmissions: [],
                     contactpersonuserid: 18,
-                    testid: "auth0|" + o.Id
+                    authid: "auth0|" + o.Id
                 });
             }
         }, (err) => {

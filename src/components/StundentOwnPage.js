@@ -21,13 +21,13 @@ class StundentOwnPage extends Component {
             })
             .then(res => {
                 console.log(res);
-                axios.get("/users/" + res.name + "/id")
+                axios.get("/users/" + res.name)
                     .then(res => {
                         let user = res.data;
                         console.log(user);
                         //TODO jos user.username==null niin ohjaa johonkin.
                         if (user.username !== null) {
-                            user.completedtasks.push("Jermuilu");
+                            user.completedmissions.push("Jermuilu");
                             console.log(user)
                             axios.get("groups/" + user.groupid)
                                 .then(res => {
