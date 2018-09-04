@@ -24,9 +24,9 @@ export default class SignUpPage extends Component {
 
     render() {
         return <div>
-            <input onChange={this.typeEmail} placeholder="Sähköposti"/>
-            <input onChange={this.typeUsername} placeholder="Käyttäjänimi"/>
-            <input onChange={this.typePassword} placeholder="Salasana" type="password"/>
+            <input onChange={this.typeEmail} placeholder="Sähköposti" />
+            <input onChange={this.typeUsername} placeholder="Käyttäjänimi" required="required" minLength="4"/>
+            <input onChange={this.typePassword} placeholder="Salasana" type="password" required="required" minLength="4"/>
             <button onClick={this.send}>Rekisteröi</button>
         </div>
     };

@@ -19,11 +19,12 @@ export default class Auth {
 
     randomint = 0;
 
-    getrandomint = ()=>{
+    getrandomint = () => {
         axios.defaults.headers.common = {
             Authorization: "Bearer " + localStorage.getItem("access_token")
         };
         this.randomint = axios.get("/users").then((r)=>{this.randomint =  r.data.length});
+
     };
 
 
@@ -79,7 +80,7 @@ export default class Auth {
                 axios.defaults.headers.common = {
                     Authorization: "Bearer " + localStorage.getItem("access_token")
                 };
-                axios.post("/users",{
+                axios.post("/users", {
                     username: o.username,
                     role: "Student",
                     points: 0,

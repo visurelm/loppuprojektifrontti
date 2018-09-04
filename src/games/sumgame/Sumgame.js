@@ -25,7 +25,7 @@ class Number extends React.PureComponent {
     }
 }
 
-class Game extends React.Component {
+class Sumgame extends React.Component {
     static bgColors = {
         playing: '#ccc',
         won: 'green',
@@ -36,6 +36,7 @@ class Game extends React.Component {
         gameStatus: 'new',
         remainingSeconds: this.props.initialSeconds,
         selectedIds: [],
+        //tähän lisätään pelaaja
     };
 
     challengeNumbers = Array
@@ -112,7 +113,7 @@ class Game extends React.Component {
             <div className="game">
                 <div
                     className="target"
-                    style={{backgroundColor: Game.bgColors[gameStatus]}}
+                    style={{backgroundColor: Sumgame.bgColors[gameStatus]}}
                 >
                     {gameStatus === 'new' ? '?' : this.target}
                 </div>
@@ -135,7 +136,7 @@ class Game extends React.Component {
                     )}
                     <div className="button" align-center="left">
                         {['won', 'lost'].includes(gameStatus) && (
-                            <button onClick={this.props.onPlayAgain} left>Pelaa uudestaan</button>
+                            <button onClick={this.props.onPlayAgain} left class="active">Pelaa uudestaan</button>
                         )}
                     </div>
                 </div>
@@ -156,14 +157,16 @@ class App extends Component {
 
     render() {
         return (
-            <Game
-                key={this.state.gameId}
-                autoPlay={this.state.gameId > 1}
-                challengeSize={6}
-                challengeRange={[2, 9]}
-                initialSeconds={10}
-                onPlayAgain={this.resetGame}
-            />
+            <div class="popup">
+                <Sumgame
+                    key={this.state.gameId}
+                    autoPlay={this.state.gameId > 1}
+                    challengeSize={6}
+                    challengeRange={[2, 9]}
+                    initialSeconds={10}
+                    onPlayAgain={this.resetGame}
+                />
+            </div>
         );
     }
 }

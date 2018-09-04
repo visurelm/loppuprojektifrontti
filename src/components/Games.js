@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import SumGame from '../games/sumgame/game';
+import SumGame from '../games/sumgame/Sumgame';
 
 class games extends Component {
     render() {
