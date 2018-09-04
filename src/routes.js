@@ -14,6 +14,7 @@ import SumGame from './games/sumgame/Sumgame';
 import NotFound from "./components/NotFound";
 import PomojenPomot from "./groups/PomojenPomot";
 import SignUpPage from "./components/SignUpPage";
+import Navcubes from './components/Navcubes';
 
 
 export default class MakeMainRoutes extends React.Component {
@@ -39,8 +40,7 @@ export default class MakeMainRoutes extends React.Component {
                                 <PomojenPomot auth={this.props.auth} {...props} />}/>
                             <Route path="/SingUpPage" render={(props) => this.props.auth.isAuthenticated() &&
                                 <SignUpPage auth={this.props.auth} {...props} />}/>
-                            <Route path="/callback" render={(props) => {
-                                this.props.handleAuthentication(props);
+                            <Route path="/callback" render={(props) => {this.props.handleAuthentication(props);
                                 return <LoadingCallback {...props} />
                             }}/>
                             <Route exact path="/jermu/add" render={(props)=><SignUpPage auth={this.props.auth} {...props}/>}/>

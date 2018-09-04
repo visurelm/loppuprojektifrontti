@@ -4,7 +4,7 @@ import axios from "axios/index";
 
 /*eslint no-restricted-globals: 0*/
 
-const LOGIN_SUCCESS_PAGE = "/Users";
+const LOGIN_SUCCESS_PAGE = "/";
 const LOGIN_FAILURE_PAGE = "/";
 
 export default class Auth {
