@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from "axios";
 
-class ListAllGroups extends Component{
+class ListAllGroups extends Component {
 
     state = {groups: []}
 
@@ -25,15 +25,19 @@ class ListAllGroups extends Component{
     render() {
         const groupdata = this.state.groups;
         const groupmap = groupdata.map((groups) => {
+            let linkTo = "/groups/" + groups.groupid;
+            console.log("LinkTo", linkTo)
             return (
                 <tr key={groups.groupid}>
                     <td>{groups.groupid}</td>
-                    <a href="/groups/PomojenPomot"><td>{groups.groupname}</td></a>
+                    <a href={linkTo}>
+                        <td>{groups.groupname}</td>
+                    </a>
                     <td>{groups.missionscores}</td>
 
                 </tr>)
         });
-            return (
+        return (
             <div>
                 <table className='teachersview'>
                     <thead>
@@ -41,7 +45,6 @@ class ListAllGroups extends Component{
                         <td>Ryhmän ID</td>
                         <td>Ryhmän superhypernimi</td>
                         <td>Ryhmän (0) pisteet</td>
-
                     </tr>
                     </thead>
                     <tbody>{groupmap}</tbody>

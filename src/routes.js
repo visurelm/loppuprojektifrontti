@@ -11,6 +11,7 @@ import SumGame from './games/sumgame/Sumgame';
 import NotFound from "./components/NotFound";
 import PomojenPomot from "./groups/PomojenPomot";
 import SignUpPage from "./components/SignUpPage";
+import GroupView from "./components/GroupView";
 
 
 export default class MakeMainRoutes extends React.Component {
@@ -40,6 +41,7 @@ export default class MakeMainRoutes extends React.Component {
                             <Route path="/callback" render={(props) => {this.props.handleAuthentication(props);
                                 return <LoadingCallback {...props} />
                             }}/>
+                            <Route path="/groups/:groupid" render={(props)=><GroupView {...props}/>}/>
                             <Route exact path="/jermu/add" render={(props)=><SignUpPage auth={this.props.auth} {...props}/>}/>
                             <Route component={NotFound}/>
                         </Switch>
