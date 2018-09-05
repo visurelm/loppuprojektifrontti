@@ -4,7 +4,7 @@ import letterE from '../images/letterE.png';
 import letterL from '../images/letterL.png';
 import letterS from '../images/letterS.png';
 import letterA from '../images/letterA.png';
-import './Navcubes.css';
+import '../css/navcubes.css';
 
 const Letters = () => {
 

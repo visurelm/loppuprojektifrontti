@@ -61,13 +61,19 @@ table thead {font-weight: bold;}
   color: darkgreen; font-size: 2rem;
 }
 .App-page {
-    background-color: #E06F8B;
+    background-color: white;
     text-align: center;
     display: inline-block;
 }
+.col-sm-2 {
+
+}
 .container {
+    background-color: #E06F8B !important;
+    text-align: center;
     position: relative;
     width: 50%;
+    color: #000 !important;
 }
 .girl {
     display: block;
@@ -138,7 +144,7 @@ table thead {font-weight: bold;}
 }
 
 .text {
-    color: white;
+    color: black;
     font-size: 18px;
     position: absolute;
     top: 50%;

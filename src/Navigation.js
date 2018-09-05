@@ -13,7 +13,7 @@ import exit from './images/exit.svg';
 class Navigation extends Component {
     render() {
         return (
-            <Navbar staticTop inverse collapseOnSelect>
+            <Navbar staticTop inverse collapseOnSelect nav>
                 <Navbar.Header>
                     {/*<Navbar.Brand>*/}
                     {/*</Navbar.Brand>*/}
