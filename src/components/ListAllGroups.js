@@ -27,7 +27,6 @@ class ListAllGroups extends Component {
         const groupdata = this.state.groups;
         const groupmap = groupdata.map((groups) => {
             let linkTo = "/groups/" + groups.groupid;
-            console.log("LinkTo", linkTo)
             return (
                 <tr key={groups.groupid}>
                     <td>{groups.groupid}</td>

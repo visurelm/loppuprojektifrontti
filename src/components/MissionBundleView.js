@@ -1,58 +1,41 @@
 import React, {Component} from 'react';
 import axios from "axios/index";
 import ListGroupsBundles from "./ListGroupsBundles";
+import ListBundlesMissions from "./ListBundlesMissions";
 
 
 export default class MissionBundleView extends Component {
 
-    state = {missions:{},user:{}};
+    state = {missionsinbubdle: [], completed: []};
 
-    componentWillMount() {
+    async componentWillMount() {
         axios.defaults.headers.common = {
             Authorization: "Bearer " + localStorage.getItem("access_token")
         };
-        axios.get("/api/user")
-            .then((res)=>{
-                axios.get("/users/" + res.data.username)
-                    .then((user)=>{})
-            });
-        axios.get("/groups/" + this.props.match.params.groupid)
-            .then((r) => {
-                this.setState({group: r.data});
-                return r.data.groupid
-            })
-            .then((groupid) => {
-                console.log("Groupid:",groupid)
-                axios.get("/missionbundles/group/" + groupid)
-                    .then((res)=>{
-                        console.log("Ryhmän setit:",res.data);
-                        if (Array.isArray(res.data)){
-                            this.setState({missionBundles:res.data});
-                        } else {
-                            this.setState({missionBundles:[res.data]});
-                        }
+        axios.get("/missionbundles/" + this.props.match.params.id)
+            .then(
+                res => {
+                    console.log("Nipun tehtävät:", res.data.listofmissions);
+                    this.setState({missionsinbubdle: res.data.listofmissions});
+                });
+        await axios.get("/api/user")
+            .then((res) => {
+                console.log("Principal", res.data)
+                axios.get("/users/" + res.data.name)
+                    .then((r) => {
+                        console.log("Kirjautunut käyttäjä:",r.data)
+                        this.setState({completed: r.data.completedmissions});
+                        console.log("Tila", this.state);
                     })
             });
-        axios.get("/missionbundles/" + this)
     }
 
-    listTeachers = ()=>{
-        let teachers = Array.isArray(this.state.group.teachers) ? this.state.group.teachers : [this.state.group.teachers];
-        let teacherstring = "";
-        for (let i=0;i<teachers.length-1;i++){
-            teacherstring += (teachers[i] + ", ")
-        }
-        teacherstring += teachers[teachers.length-1];
-        return teacherstring;
-    }
 
     render() {
+        console.log("Setin tehtävät:", this.state.missionsinbubdle);
+        console.log("Tehdyt tehtävät:", this.state.completed);
         return (<div>
-            <h2>{this.state.group.groupname}</h2>
-            <div>
-                Opettajat: {this.listTeachers()}
-            </div>
-            <ListGroupsBundles groupid={this.state.group.groupid} bundles={this.state.missionBundles}/>
+            {<ListBundlesMissions missionids={this.state.missionsinbubdle} completed={this.state.completed}/>}
         </div>);
     }
 }
