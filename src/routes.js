@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Router, Switch} from 'react-router-dom';
+import {Route, Router, Switch,Redirect} from 'react-router-dom';
 // import App from './App';
 import Home from './components/Home';
 import LoadingCallback from './components/LoadingCallback';
@@ -25,8 +25,9 @@ export default class MakeMainRoutes extends React.Component {
                     <div>
                         <Switch>
                             <Route exact path="/" render={(props) => <Home auth={this.props.auth} {...props} />}/>
-                            <Route path="/users" render={(props) => this.props.auth.isAuthenticated() &&
-                                <Users auth={this.props.auth} {...props} />}/>
+                            {/*<Route path="/users" render={(props) => this.props.auth.isAuthenticated() &&*/}
+                                {/*<Users auth={this.props.auth} {...props} />}/>*/}
+                            <Route path="/users" render={(props) => this.props.auth.isAuthenticated() ? <Users auth={this.props.auth} {...props} /> : <Redirect to="/"/>}/>
                             <Route path="/MyOwnPage" render={(props) => this.props.auth.isAuthenticated() &&
                                 <StundentOwnPage auth={this.props.auth} {...props} />}/>
                             <Route path="/TeachersView" render={(props) => this.props.auth.isAuthenticated() &&

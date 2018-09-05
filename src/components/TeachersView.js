@@ -21,7 +21,21 @@ class TeachersView extends Component {
                 this.setState({groups});
             });
     }
-
+    // componentDidMount() {
+    //
+    //     console.log(localStorage.getItem("access_token"));
+    //     axios.defaults.headers.common = {
+    //         Authorization: "Bearer " + localStorage.getItem("access_token")
+    //     };
+    //     axios.get("/users")
+    //         .then((res, err) => {
+    //             const users = res.data;
+    //             console.log(users);
+    //             this.setState({users});
+    //         }).catch((e) => {
+    //         window.location = "/";
+    //     });
+    // };
 
     render() {
         const groupdata = this.state.groups;

@@ -13,8 +13,6 @@ class StundentOwnPage extends Component {
         axios.defaults.headers.common = {
             Authorization: "Bearer " + localStorage.getItem("access_token")
         };
-        // axios.get()
-        // axios.get("/users/18/id")
         axios.get("/api/user")
             .then(res => {
                 return res.data;
@@ -27,8 +25,8 @@ class StundentOwnPage extends Component {
                         console.log(user);
                         //TODO jos user.username==null niin ohjaa johonkin.
                         if (user.username !== null) {
-                            user.completedmissions.push("Jermuilu");
-                            console.log(user)
+                            // user.completedmissions.push("Jermuilu");
+                            // console.log(user)
                             axios.get("groups/" + user.groupid)
                                 .then(res => {
                                     const group = res.data;

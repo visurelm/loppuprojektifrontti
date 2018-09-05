@@ -19,6 +19,7 @@ export default class Auth {
 
     randomint = 0;
 
+
     getrandomint = () => {
         axios.defaults.headers.common = {
             Authorization: "Bearer " + localStorage.getItem("access_token")
@@ -30,6 +31,9 @@ export default class Auth {
 
 
     constructor() {
+        axios.defaults.headers.common = {
+            Authorization: "Bearer " + localStorage.getItem("access_token")
+        };
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
         this.handleAuthentication = this.handleAuthentication.bind(this);
@@ -41,31 +45,25 @@ export default class Auth {
         this.auth0.authorize();
     };
 
-    isTeacher = async () => {
-        if (this.isAuthenticated()) {
-            axios.defaults.headers.common = {
-                Authorization: "Bearer " + localStorage.getItem("access_token")
-            };
-            let role = false;
-            role = await axios.get("/api/user")
-                .then((r) => {
-                    return r.data.name
-                }).then((res) => {
-                    return axios.get("/users/" + res).then(res => {
-                        role = res.data.role === "CHIEF"
-                    })
-                        .then(() => {
-                            console.log(role);
-                            return role;
-                        });
-                });
-            return role;
-        }
-        else {
-            return false;
-        }
+    // isTeacher = this.state.teacher;
 
-    };
+
+    // isTeacher = async () => {
+    //     axios.defaults.headers.common = {
+    //         Authorization: "Bearer " + localStorage.getItem("access_token")
+    //     };
+    //     let role = false;
+    //     role = await axios.get("/api/user")
+    //         .then((r) => {
+    //             return r.data.name
+    //         }).then((res) => {
+    //             return axios.get("/users/" + res).then(res => {
+    //                 return res.data.role === "CHIEF";
+    //             })
+    //         });
+    //     console.log("On opettaja:", role);
+    //     this.state.teacher = role;
+    // };
 
     handleAuthentication() {
         this.auth0.parseHash((err, authResult) => {
@@ -121,7 +119,8 @@ export default class Auth {
             throw err;
         });
         console.log("Lisättiin", added);
-    };
+    }
+    ;
 
     setSession(authResult) {
         // Set the time that the Access Token will expire at

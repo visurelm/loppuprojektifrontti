@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-class Users extends Component{
+class Users extends Component {
     state = {users: []};
 
     getUsers = () => {
@@ -9,17 +9,21 @@ class Users extends Component{
     };
 
     componentDidMount() {
+
         console.log(localStorage.getItem("access_token"));
         axios.defaults.headers.common = {
             Authorization: "Bearer " + localStorage.getItem("access_token")
         };
         axios.get("/users")
-            .then(res => {
+            .then((res, err) => {
                 const users = res.data;
                 console.log(users);
                 this.setState({users});
-            });
-    }
+            }).catch((e) => {
+            window.location = "/";
+        });
+    };
+
 
     render() {
         const usersdata = this.state.users;
