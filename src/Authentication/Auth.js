@@ -23,10 +23,14 @@ export default class Auth {
         axios.defaults.headers.common = {
             Authorization: "Bearer " + localStorage.getItem("access_token")
         };
+<<<<<<< HEAD
 
         this.randomint = axios.get("/users").then((r) => {
             this.randomint = r.data.length
         });
+=======
+        this.randomint = axios.get("/users").then((r)=>{this.randomint =  r.data.length});
+>>>>>>> FETCH_HEAD
 
     };
 

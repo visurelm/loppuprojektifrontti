@@ -18,11 +18,13 @@ class StundentOwnPage extends Component {
                 return res.data;
             })
             .then(res => {
+
                 axios.get("/users/" + res.name)
                     .then(res => {
                         let user = res.data;
                         //TODO jos user.username==null niin ohjaa johonkin.
                         if (user.username !== null) {
+
                             axios.get("groups/" + user.groupid)
                                 .then(res => {
                                     const group = res.data;

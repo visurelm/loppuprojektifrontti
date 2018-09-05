@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
-import '../../css/elsa.css';
+import '../../App.css';
 
 const randomNumberBetween = (min, max) =>
     Math.floor(Math.random() * (max - min + 1)) + min;
@@ -27,9 +27,9 @@ class Number extends React.PureComponent {
 
 class Sumgame extends React.Component {
     static bgColors = {
-        playing: '#6fe0c4',
-        won: '#8be06f',
-        lost: '#d22e57',
+        playing: '#ccc',
+        won: 'green',
+        lost: 'red',
     };
 
     state = {
@@ -128,9 +128,9 @@ class Sumgame extends React.Component {
                         />
                     ))}
                 </div>
-                <div className="play">
+                <div className="footer">
                     {gameStatus === 'new' ? (
-                        <button onClick={this.startGame} className="playbuttons">Aloita</button>
+                        <button onClick={this.startGame}>Aloita</button>
                     ) : (
                         <div className="timer-value">{remainingSeconds}</div>
                     )}
