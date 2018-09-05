@@ -18,17 +18,14 @@ class StundentOwnPage extends Component {
                 return res.data;
             })
             .then(res => {
-                console.log(res);
                 axios.get("/users/" + res.name)
                     .then(res => {
                         let user = res.data;
-                        console.log(user);
                         //TODO jos user.username==null niin ohjaa johonkin.
                         if (user.username !== null) {
                             axios.get("groups/" + user.groupid)
                                 .then(res => {
                                     const group = res.data;
-                                    console.log(group)
                                     user.groupname = group.groupname;
                                     this.setState({user: user})
                                 });
@@ -56,7 +53,7 @@ class StundentOwnPage extends Component {
 
         return (
             <div>
-                <p>Tänne tulee käyttäjän omat tiedot</p>
+                <h3>Käyttäjän omat tiedot</h3>
                 <table>
                     <tbody>
                     <tr>
