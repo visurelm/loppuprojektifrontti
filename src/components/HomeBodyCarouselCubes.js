@@ -32,7 +32,7 @@ class HomeBodyCarouselCubes extends Component{
                     <Carousel.Item>
                         <img align="center" width={140} height={140} alt="A" src={A} />
                         <Carousel.Caption>
-                            <h3>JEEJEE</h3>
+                            <h3></h3>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>;

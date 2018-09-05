@@ -11,6 +11,18 @@ body {
     text-align: left;
 }
 
+strong, h1, h2, footer {
+    color: #E06F8B;
+}
+
+footer p {
+    margin-top: 8px;
+    font-size: small;
+    font-weight: bolder;
+    text-align: center;
+    font-family: Arial;
+}
+
 .teachersview td, .teachersview th, .users td, .users th {
     border: 1px solid #ddd;
     padding: 5px;
@@ -51,12 +63,6 @@ body {
     max-height: 50px;
     border-radius: 25px;
 }
-/*.image {*/
-    /*align-items: center;*/
-    /*display: block;*/
-    /*width: 50px;*/
-    /*height: 50px;*/
-/*}*/
 
 .nav > li > a > img {
     alignment: center;
@@ -66,42 +72,13 @@ body {
     height: 50px;
 }
 
-/*.login {*/
-    /*margin-left: 20px;*/
-    /*display: block;*/
-    /*width: 50px;*/
-    /*height: 50px;*/
-/*}*/
-/*.logout {*/
-    /*margin-left: 20px;*/
-    /*display: block;*/
-    /*width: 50px;*/
-    /*height: 50px;*/
-/*}*/
 .image2 {
     display: block;
     width:  75px;
     height: 75px;
     margin-left: 10px;
 }
-/*.books {*/
-    /*display: block;*/
-    /*width: 50px;*/
-    /*height: 50px;*/
-    /*margin-left: -5px;*/
-/*}*/
-/*.teacher {*/
-    /*display: block;*/
-    /*width: 50px;*/
-    /*height: 50px;*/
-    /*margin-left: 30px;*/
-/*}*/
-/*.joystick {*/
-    /*display: block;*/
-    /*width: 50px;*/
-    /*height: 50px;*/
-    /*margin-left: 10px;*/
-/*}*/
+
 .span2 {
     margin-left: 10px;
 }
@@ -135,8 +112,21 @@ body {
     text-align: center;
 }
 
+.navbar-nav{
+    float: inside;
+}
+
+.navbar {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
+
 .navbar-inverse {
-    align-content: center;
+    display: inline-block;
     background-color: #E06F8B;
     border-color: #E06F8B;
 }
@@ -226,6 +216,21 @@ body {
         background-color: transparent;
     }
 }
+
+@media (min-width: 768px) {
+    .navbar-nav {
+        display: inline-block;
+        margin: 0;
+    }
+    .navbar-nav > li {
+        float: left;
+    }
+    .navbar-nav > li > a {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
 .navbar-inverse .navbar-link {
     alignment: center;
     color: #000000;

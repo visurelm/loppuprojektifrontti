@@ -16,8 +16,7 @@ class HomeBody extends Component {
                             <CarouselCubes/>
                         </div>
                         <div className="col-sm-8 text-left">
-                            <h1 align="center">Tervetuloa </h1>
-                            <p>Tähän tulee terhvehdys</p>
+                            <h1 align="center">Tervetuloa!</h1>
                             <StoryOfElsa/>
                         </div>
                         <div className="col-sm-2 sidenav">
@@ -27,7 +26,8 @@ class HomeBody extends Component {
                 </div>
 
                 <footer className="container-fluid text-center">
-                    <p>@asjgapogjapo</p>
+                    <br/>
+                    <p>@ 2018 JERMu: Jouni, Elmo, Reija, Miika, undefined</p>
                 </footer>
                 </body>
             </div>
