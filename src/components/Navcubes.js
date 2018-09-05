@@ -14,10 +14,10 @@ class Navcubes extends Component {
     render() {
         return (
             <div className="navcontainer">
-                <span className="navcubes"><img src={letterE} alt="letterE"/></span>
-                <span className="navcubes"><img src={letterL} alt="letterL"/></span>
-                <span className="navcubes"><img src={letterS} alt="letterS"/></span>
-                <span className="navcubes"><img src={letterA} alt="letterA"/></span>
+                <img src={letterE} alt="letterE" className="navcubes"/>
+                <img src={letterL} alt="letterL" className="navcubes"/>
+                <img src={letterS} alt="letterS" className="navcubes"/>
+                <img src={letterA} alt="letterA"className="navcubes"/>
             </div>
         );
     }
