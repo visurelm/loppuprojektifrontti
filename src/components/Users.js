@@ -29,23 +29,23 @@ class Users extends Component{
         const userit = usersdata.map((user) => {
             return <tr key={user._id}>
                 <td>{user.username}</td>
-                <td>{user.id}</td>
-                <td>{user.role}</td>
-                <td>{user.points}</td>
-                <td>{user.groupId}</td>
-                <td>{user.completedTask}</td>
+                {/*<td>{user.id}</td>*/}
+                {/*<td>{user.role}</td>*/}
+                {/*<td>{user.points}</td>*/}
+                <td>{user.groupid}</td>
+                <td>{user.completedmissions}</td>
             </tr>
         });
         return (
             <table className='users'>
                 <thead>
                 <tr>
-                    <td>userName</td>
-                    <td>userID</td>
-                    <td>role</td>
-                    <td>points</td>
-                    <td>groupId</td>
-                    <td>completedTasks</td>
+                    <td>Käyttäjänimi</td>
+                    {/*<td>KäyttäjäID</td>*/}
+                    {/*<td>role</td>*/}
+                    {/*<td>Pisteet</td>*/}
+                    <td>Ryhmä</td>
+                    <td>Tehdyt tehtävät</td>
                 </tr>
                 </thead>
                 <tbody>{userit}</tbody>

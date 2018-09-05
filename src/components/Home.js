@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import Users from '../components/Users';
-import Navcubes from '../components/Navcubes';
+import HomeBoy from '../components/HomeBody';
 import '../App.css';
 
-class Home extends Component{
+class Home extends Component {
     render() {
         return (
 
@@ -11,6 +10,7 @@ class Home extends Component{
             <div className="Homepage">
 
                 {!this.props.auth.isAuthenticated() && <h1 align="center">Moro, kirjauduppa &uarr; !</h1>}
+                <HomeBoy/>
             </div>
         );
     }

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from "axios";
+import '../css/elsa.css';
 
 class ListAllGroups extends Component {
 
@@ -30,9 +31,7 @@ class ListAllGroups extends Component {
             return (
                 <tr key={groups.groupid}>
                     <td>{groups.groupid}</td>
-                    <a href={linkTo}>
-                        <td>{groups.groupname}</td>
-                    </a>
+                    <td><a href={linkTo}>{groups.groupname} </a></td>
                     <td>{groups.missionscores}</td>
 
                 </tr>)
@@ -43,8 +42,7 @@ class ListAllGroups extends Component {
                     <thead>
                     <tr>
                         <td>Ryhmän ID</td>
-                        <td>Ryhmän superhypernimi</td>
-                        <td>Ryhmän (0) pisteet</td>
+                        <td>Ryhmän nimi</td>
                     </tr>
                     </thead>
                     <tbody>{groupmap}</tbody>

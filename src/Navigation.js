@@ -9,11 +9,12 @@ import joystick from './images/joystick.svg';
 import books from './images/text-books.svg';
 import enter from './images/enter.svg';
 import exit from './images/exit.svg';
+import './css/elsa.css';
 
 class Navigation extends Component {
     render() {
         return (
-            <Navbar staticTop inverse collapseOnSelect>
+            <Navbar staticTop inverse collapseOnSelect nav className="navbar-inverse">
                 <Navbar.Header>
                     {/*<Navbar.Brand>*/}
                     {/*</Navbar.Brand>*/}

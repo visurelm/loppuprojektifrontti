@@ -10,7 +10,7 @@ class TeachersView extends Component {
 
         return (
             <div>
-                <a href="/SingUpPage" ><img src={AddUser} className="image2" center/><span className="span2">Lisää käyttäjä</span></a>
+                <a href="/SingUpPage" ><img src={AddUser} className="image2"/><span className="span2">Lisää käyttäjä</span></a>
 
                 <ListAllGroups/>
                 <ListAllMissions/>
