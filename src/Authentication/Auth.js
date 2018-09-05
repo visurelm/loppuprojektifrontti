@@ -4,7 +4,7 @@ import axios from "axios/index";
 
 /*eslint no-restricted-globals: 0*/
 
-const LOGIN_SUCCESS_PAGE = "/Users";
+const LOGIN_SUCCESS_PAGE = "/";
 const LOGIN_FAILURE_PAGE = "/";
 
 export default class Auth {
@@ -19,21 +19,19 @@ export default class Auth {
 
     randomint = 0;
 
-
     getrandomint = () => {
         axios.defaults.headers.common = {
             Authorization: "Bearer " + localStorage.getItem("access_token")
         };
+
         this.randomint = axios.get("/users").then((r) => {
             this.randomint = r.data.length
         });
+
     };
 
 
     constructor() {
-        axios.defaults.headers.common = {
-            Authorization: "Bearer " + localStorage.getItem("access_token")
-        };
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
         this.handleAuthentication = this.handleAuthentication.bind(this);
@@ -44,26 +42,6 @@ export default class Auth {
     login() {
         this.auth0.authorize();
     };
-
-    // isTeacher = this.state.teacher;
-
-
-    // isTeacher = async () => {
-    //     axios.defaults.headers.common = {
-    //         Authorization: "Bearer " + localStorage.getItem("access_token")
-    //     };
-    //     let role = false;
-    //     role = await axios.get("/api/user")
-    //         .then((r) => {
-    //             return r.data.name
-    //         }).then((res) => {
-    //             return axios.get("/users/" + res).then(res => {
-    //                 return res.data.role === "CHIEF";
-    //             })
-    //         });
-    //     console.log("On opettaja:", role);
-    //     this.state.teacher = role;
-    // };
 
     handleAuthentication() {
         this.auth0.parseHash((err, authResult) => {
@@ -88,7 +66,6 @@ export default class Auth {
     }
 
     signUpStudent(username, password, email) {
-        // signUpStudent(username, password, email,groupid,contactpersonuserid) {
         let emailtopush = email ? email : "elsa" + (this.randomint++) + "@elsa.fi"
         let added = this.auth0.signup({
             connection: "Username-Password-Authentication",
@@ -113,14 +90,15 @@ export default class Auth {
                     completedmissions: [],
                     contactpersonuserid: 18,
                     authid: "auth0|" + o.Id
+
                 });
             }
         }, (err) => {
             throw err;
         });
         console.log("Lisättiin", added);
-    }
-    ;
+
+    };
 
     setSession(authResult) {
         // Set the time that the Access Token will expire at

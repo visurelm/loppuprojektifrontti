@@ -1,67 +1,19 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import ListAllMissions from './ListAllMissions';
+import ListAllGroups from './ListAllGroups';
+import AddUser from '../images/add-user.svg';
 
 class TeachersView extends Component {
 
-    state = {groups: []}
-
-    getGroups = () => {
-        this.componentDidMount();
-    };
-
-    componentDidMount() {
-        axios.defaults.headers.common = {
-            Authorization: "Bearer " + localStorage.getItem("access_token")
-        };
-
-        axios.get("/groups")
-            .then(res => {
-                let groups = res.data;
-                console.log(groups);
-                this.setState({groups});
-            });
-    }
-    // componentDidMount() {
-    //
-    //     console.log(localStorage.getItem("access_token"));
-    //     axios.defaults.headers.common = {
-    //         Authorization: "Bearer " + localStorage.getItem("access_token")
-    //     };
-    //     axios.get("/users")
-    //         .then((res, err) => {
-    //             const users = res.data;
-    //             console.log(users);
-    //             this.setState({users});
-    //         }).catch((e) => {
-    //         window.location = "/";
-    //     });
-    // };
-
     render() {
-        const groupdata = this.state.groups;
-        const groupmap = groupdata.map((groups) => {
-            return (
-            <tr key={groups.groupid}>
-                <td>{groups.groupid}</td>
-                <a href="/groups/PomojenPomot"><td>{groups.groupname}</td></a>
-                <td>{groups.taskscores}</td>
-            </tr>)
-        });
 
         return (
             <div>
-                <p>{groupmap}</p>
-                <p>Tänne tulee ryhmät</p>
-                <table className='teachersview'>
-                    <thead>
-                    <tr>
-                        <td>Ryhmän ID</td>
-                        <td>Ryhmän superhypernimi</td>
-                        <td>Ryhmän (0)pisteet</td>
-                    </tr>
-                    </thead>
-                    <tbody>{groupmap}</tbody>
-                </table>
+                <a href="/SingUpPage" ><img src={AddUser} className="image2" center/><span className="span2">Lisää käyttäjä</span></a>
+
+                <ListAllGroups/>
+                <ListAllMissions/>
             </div>
         );
     }

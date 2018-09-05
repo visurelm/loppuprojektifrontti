@@ -25,8 +25,6 @@ class StundentOwnPage extends Component {
                         console.log(user);
                         //TODO jos user.username==null niin ohjaa johonkin.
                         if (user.username !== null) {
-                            // user.completedmissions.push("Jermuilu");
-                            // console.log(user)
                             axios.get("groups/" + user.groupid)
                                 .then(res => {
                                     const group = res.data;
@@ -78,7 +76,7 @@ class StundentOwnPage extends Component {
                     </tr>
                     </tbody>
                 </table>
-                {/*<button href="/">Palaa etusivulle</button>*/}
+                <button href="/">Palaa etusivulle</button>
             </div>
         );
     }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-class Users extends Component {
+class Users extends Component{
     state = {users: []};
 
     getUsers = () => {
@@ -23,7 +23,6 @@ class Users extends Component {
             window.location = "/";
         });
     };
-
 
     render() {
         const usersdata = this.state.users;
