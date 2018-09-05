@@ -27,8 +27,8 @@ class Navigation extends Component {
                                 {/*<div className="text">Etusivu</div></div>*/}
                             <NavItem eventKey={1} href="/" ><img src={school} alt="School" className="image"/>Etusivu</NavItem>
                             <NavItem eventKey={2} href="/Users"><img src={friends} alt="Users" className="image"/>Käyttäjät</NavItem>
-                            <NavItem eventKey={3} href="/MyOwnPage"><img src={girl} alt="Users" className="girl"/>Omat tiedot</NavItem>
-                            <NavItem eventKey={4} href="/TeachersView"><img src={teacher} alt="Teacher" className="teacher"/>Opettajan näkymä</NavItem>
+                            <NavItem eventKey={3} href="/MyOwnPage"><img src={girl} alt="OwnPage" className="girl"/>Omat tiedot</NavItem>
+                            <NavItem eventKey={4} href="/TeachersView"><img src={teacher} alt="Teacher" className="teacher"/>Opettajalle</NavItem>
                             <NavItem eventKey={5} href="/games/sumgame"><img src={joystick} alt="Games" className="joystick"/>Summapeli</NavItem>
                             {/*<NavItem eventKey={6} href="/TeachersView">?</NavItem>*/}
                             <NavItem eventKey={7} href="/StoryOfElsa"><img src={books} alt="Users" className="books"/>ELSA</NavItem>
