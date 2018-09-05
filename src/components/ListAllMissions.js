@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import axios from "axios";
-<<<<<<< HEAD
 import '../css/elsa.css';
-=======
->>>>>>> FETCH_HEAD
 
 class ListAllMissions extends Component {
 
@@ -30,11 +27,7 @@ class ListAllMissions extends Component {
         const tasks = missionsdata.map((mission) => {
             return (<tr key={mission._id}>
                 <td>{mission.id}</td>
-<<<<<<< HEAD
                 <td>{mission.missionname}</td>
-=======
-                <td>{mission.taskname}</td>
->>>>>>> FETCH_HEAD
                 <td>{mission.componentname}</td>
             </tr>)
         });

@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
 import axios from "axios";
-<<<<<<< HEAD
 import '../css/elsa.css';
 
 class ListAllGroups extends Component {
-=======
-
-class ListAllGroups extends Component{
->>>>>>> FETCH_HEAD
 
     state = {groups: []}
 
