@@ -12,6 +12,7 @@ import NotFound from "./components/NotFound";
 import PomojenPomot from "./groups/PomojenPomot";
 import SignUpPage from "./components/SignUpPage";
 import GroupView from "./components/GroupView";
+import CMB from './components/CreateMissionBundle';
 
 
 export default class MakeMainRoutes extends React.Component {
@@ -34,8 +35,8 @@ export default class MakeMainRoutes extends React.Component {
                                 <Games auth={this.props.auth} {...props} />}/>
                             <Route path="/games/sumgame" render={(props) => this.props.auth.isAuthenticated() &&
                                 <SumGame auth={this.props.auth} {...props} />}/>
-                            <Route exact path="/groups/PomojenPomot" render={(props) => this.props.auth.isAuthenticated() &&
-                                <PomojenPomot auth={this.props.auth} {...props} />}/>
+                            <Route exact path="/CreateMissionBundle" render={(props) => this.props.auth.isAuthenticated() &&
+                                <CMB auth={this.props.auth} {...props} />}/>
                             <Route path="/SingUpPage" render={(props) => this.props.auth.isAuthenticated() &&
                                 <SignUpPage auth={this.props.auth} {...props} />}/>
                             <Route path="/callback" render={(props) => {this.props.handleAuthentication(props);
