@@ -9,7 +9,6 @@ import TeachersView from "./components/TeachersView";
 import Games from './components/Games';
 import SumGame from './games/sumgame/Sumgame';
 import NotFound from "./components/NotFound";
-import PomojenPomot from "./groups/PomojenPomot";
 import SignUpPage from "./components/SignUpPage";
 import GroupView from "./components/GroupView";
 import MissionBundleView from "./components/MissionBundleView";
