@@ -3,6 +3,7 @@ import axios from 'axios';
 import ListAllMissions from './ListAllMissions';
 import ListAllGroups from './ListAllGroups';
 import AddUser from '../images/add-user.svg';
+import '../css/elsa.css';
 
 class TeachersView extends Component {
 
