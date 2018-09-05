@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from "axios";
 import '../css/elsa.css';
 
-class ListAllGroups extends Component{
+class ListAllGroups extends Component {
 
     state = {groups: []}
 
@@ -26,15 +26,17 @@ class ListAllGroups extends Component{
     render() {
         const groupdata = this.state.groups;
         const groupmap = groupdata.map((groups) => {
+            let linkTo = "/groups/" + groups.groupid;
+            console.log("LinkTo", linkTo)
             return (
                 <tr key={groups.groupid}>
                     <td>{groups.groupid}</td>
-                    <td>{groups.groupname}</td>
+                    <td><a href={linkTo}>{groups.groupname} </a></td>
                     <td>{groups.missionscores}</td>
 
                 </tr>)
         });
-            return (
+        return (
             <div>
                 <table className='teachersview'>
                     <thead>

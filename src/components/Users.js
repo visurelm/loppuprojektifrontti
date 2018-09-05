@@ -11,7 +11,7 @@ class Users extends Component{
 
     componentDidMount() {
 
-        console.log(localStorage.getItem("access_token"));
+        // console.log(localStorage.getItem("access_token"));
         axios.defaults.headers.common = {
             Authorization: "Bearer " + localStorage.getItem("access_token")
         };

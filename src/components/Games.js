@@ -10,5 +10,4 @@ class games extends Component {
         );
     }
 }
-
 export default games;
