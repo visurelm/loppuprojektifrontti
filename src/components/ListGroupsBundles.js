@@ -26,10 +26,11 @@ class ListGroupsBundles extends Component {
         const bundlesdata = Array.isArray(this.props.bundles) ? this.props.bundles : [this.props.bundles];
         console.log(bundlesdata)
         const bundles = bundlesdata.map((bundle) => {
+            let link = "/missionbundle/" + bundle.bundleid;
             console.log("Wrapperissä",bundle)
             return (<tr key={bundle.id}>
                 {/*<td>{bundle._id}</td>*/}
-                <td>{bundle.bundlename}</td>
+                <td><a href={link}>{bundle.bundlename}</a></td>
                 {Array.isArray(bundle.listofmissions)?<td>{bundle.listofmissions.length}</td>:undefined}
             </tr>)
         });
