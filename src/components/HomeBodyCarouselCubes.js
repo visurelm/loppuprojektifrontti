@@ -12,25 +12,25 @@ class HomeBodyCarouselCubes extends Component{
             <div>
                 <Carousel>
                     <Carousel.Item>
-                        <img width={100} height={100} alt="E" src={E} />
+                        <img align="center" width={140} height={140} alt="E" src={E} />
                         <Carousel.Caption>
                             {/*<h3>Elmo</h3>*/}
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img width={100} height={100} alt="L" src={L} />
+                        <img align="center" width={140} height={140} alt="L" src={L} />
                         <Carousel.Caption>
                             {/*<h3>on</h3>*/}
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img width={100} height={100} alt="S" src={S} />
+                        <img align="center" width={140} height={140} alt="S" src={S} />
                         <Carousel.Caption>
                             {/*<h3>PARAS</h3>*/}
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img width={100} height={100} alt="A" src={A} />
+                        <img align="center" width={140} height={140} alt="A" src={A} />
                         <Carousel.Caption>
                             <h3>JEEJEE</h3>
                         </Carousel.Caption>
