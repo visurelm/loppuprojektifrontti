@@ -11,7 +11,6 @@ class Home extends Component{
             <div className="Homepage">
 
                 {!this.props.auth.isAuthenticated() && <h1 align="center">Moro, kirjauduppa &uarr; !</h1>}
-                <Navcubes/>
             </div>
         );
     }

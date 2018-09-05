@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {Row, Col} from 'react-bootstrap';
 import letterE from '../images/letterE.png';
 import letterL from '../images/letterL.png';
@@ -6,16 +6,21 @@ import letterS from '../images/letterS.png';
 import letterA from '../images/letterA.png';
 import './Navcubes.css';
 
+const Letters = () => {
 
-const Navcubes = () => (
-    <div className="navcubes">
-        <Row>
-            <Col xs={3}><a href="/"><img src={letterE} alt="letterE"/></a></Col>
-            <Col xs={3}><a href="/Logout"><img src={letterL} alt="letterL"/></a></Col>
-            <Col xs={3}><a href="/users"><img src={letterS} alt="letterS"/></a></Col>
-            <Col xs={3}><a href="/MyOwnPage"><img src={letterA} alt="letterA"/></a></Col>
-        </Row>
-    </div>
-)
+}
+
+class Navcubes extends Component {
+    render() {
+        return (
+            <div className="navcontainer">
+                <span className="navcubes"><img src={letterE} alt="letterE"/></span>
+                <span className="navcubes"><img src={letterL} alt="letterL"/></span>
+                <span className="navcubes"><img src={letterS} alt="letterS"/></span>
+                <span className="navcubes"><img src={letterA} alt="letterA"/></span>
+            </div>
+        );
+    }
+}
 
 export default Navcubes;

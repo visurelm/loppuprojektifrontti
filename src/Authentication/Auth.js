@@ -114,7 +114,7 @@ export default class Auth {
         localStorage.removeItem('id_token');
         localStorage.removeItem('expires_at');
         // navigate to the home route
-        history.replace('/');
+        history.push('/');
         location.pathname = LOGIN_FAILURE_PAGE;
         this.auth0.logout({returnTo: 'http://localhost:3000'});
     }
