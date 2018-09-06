@@ -10,6 +10,7 @@ import books from './images/text-books.svg';
 import enter from './images/enter.svg';
 import exit from './images/exit.svg';
 import './css/elsa.css';
+import BackGround from './components/backgroundcarousel';
 
 class Navigation extends Component {
     render() {
@@ -29,9 +30,9 @@ class Navigation extends Component {
                             <NavItem eventKey={2} href="/Users"><img src={friends} alt="Users" className="image"/>Käyttäjät</NavItem>
                             <NavItem eventKey={3} href="/MyOwnPage"><img src={girl} alt="OwnPage" className="girl"/>Omat tiedot</NavItem>
                             <NavItem eventKey={4} href="/TeachersView"><img src={teacher} alt="Teacher" className="teacher"/>Opettajalle</NavItem>
-                            <NavItem eventKey={5} href="/games/sumgame"><img src={joystick} alt="Games" className="joystick"/>Summapeli</NavItem>
+                            <NavItem eventKey={5} href="/games"><img src={joystick} alt="Games" className="joystick"/>Pelit</NavItem>
                             {/*<NavItem eventKey={6} href="/TeachersView">?</NavItem>*/}
-                            <NavItem eventKey={7} href="/StoryOfElsa"><img src={books} alt="Users" className="books"/>ELSA</NavItem>
+                            <NavItem eventKey={7} href="/BackStory"><img src={books} alt="Users" className="books"/>ELSA</NavItem>
 
                             {!this.props.auth.isAuthenticated() &&
                             <NavItem eventKey={8} onClick={this.props.auth.login}><img src={enter} alt="Login" className="login"/>Kirjaudu sisään</NavItem>}

@@ -3,8 +3,8 @@ import React,{Component} from 'react';
 class StoryOfElsa extends Component{
     render() {
         return (
-            <div className="textarea">
-                <h2 align="center">ELSAn tarina</h2>
+            <div>
+                <h2>ELSAn tarina</h2>
                     <h4>
                     <strong>E</strong>sikouluikäisen <br/>
                     <strong>L</strong>apsen <br/>
