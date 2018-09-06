@@ -37,7 +37,7 @@ class StundentOwnPage extends Component {
 
     }
 
-    listCompletedMissions = () => {
+    listCompletedTasks = () => {
         let completed = this.state.user.completedmissions;
         if (completed !== undefined && completed.length > 0) {
             return completed.map((task) => {
@@ -59,18 +59,18 @@ class StundentOwnPage extends Component {
                 <table>
                     <tbody>
                     <tr>
-                        <td>Nimi:</td>
+                        <th>Nimi:</th>
                         <td>{this.state.user.username}</td>
                     </tr>
                     <tr>
-                        <td>Opetusryhmä:</td>
+                        <th>Opetusryhmä:</th>
                         <td>{this.state.user.groupname}</td>
                     </tr>
                     <tr>
-                        <td>Tehdyt tehtävät:</td>
+                        <th>Tehdyt tehtävät:</th>
                         <td>
-                            {this.state.user.completedmissions !== undefined && <ul>{this.listCompletedMissions()}</ul>}
-                            {this.state.user.completedmissions === undefined && <p>{this.listCompletedMissions()}</p>}
+                            {this.state.user.completedmissions !== undefined && <ul>{this.listCompletedTasks()}</ul>}
+                            {this.state.user.completedmissions === undefined && <p>{this.listCompletedTasks()}</p>}
                         </td>
                     </tr>
                     </tbody>
