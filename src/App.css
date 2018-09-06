@@ -39,27 +39,24 @@ table thead {font-weight: bold;}
 }
 
 .target {
-  border: thin solid #999999; width: 40%; height: 75px;
+  border: thin solid #E06F8B; width: 40%; height: 75px;
   font-size: 45px; text-align: center; display: inline-block;
-  background-color: #999999;
+  background-color: #E06F8B; border-radius: 20px;
 }
 
 .challenge-numbers {
   width: 85%; margin: 1rem auto;
 }
 
-.number {
-  border: thin solid lightgray; background-color: #eeeeee;
-  width: 40%; text-align: center; font-size: 36px;
-  border-radius: 5px; margin: 1rem 5%; display: inline-block;
-}
-
-.footer {
+.play {
   display: flex; width: 90%; justify-content: space-between;
 }
 
 .timer-value {
-  color: darkgreen; font-size: 2rem;
+  color: #6f8be0;
+  font-size: 36px;
+  font-weight: bolder;
+  text-align: center;
 }
 .App-page {
     background-color: white;
@@ -68,5 +65,9 @@ table thead {font-weight: bold;}
 }
 a {
     alignment: center;
+    color: #6f8be0;
 }
 
+.academy{
+    color: #00772a;
+}

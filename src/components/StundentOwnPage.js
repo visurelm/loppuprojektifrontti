@@ -18,11 +18,13 @@ class StundentOwnPage extends Component {
                 return res.data;
             })
             .then(res => {
+
                 axios.get("/users/" + res.name)
                     .then(res => {
                         let user = res.data;
                         //TODO jos user.username==null niin ohjaa johonkin.
                         if (user.username !== null) {
+
                             axios.get("groups/" + user.groupid)
                                 .then(res => {
                                     const group = res.data;
@@ -36,7 +38,7 @@ class StundentOwnPage extends Component {
     }
 
     listCompletedTasks = () => {
-        let completed = this.state.user.completedtasks;
+        let completed = this.state.user.completedmissions;
         if (completed !== undefined && completed.length > 0) {
             return completed.map((task) => {
                 return <li>{task}</li>;
@@ -55,26 +57,24 @@ class StundentOwnPage extends Component {
         return (
             <div>
                 <h3>Käyttäjän omat tiedot</h3>
-                <table>
+                <table className="ownpage">
+                    <thead>
+                        <th>Nimi</th>
+                        <th>Opetusryhmä</th>
+                        <th>Tehdyt tehtävät</th>
+                    </thead>
                     <tbody>
                     <tr>
-                        <td>Nimi:</td>
                         <td>{this.state.user.username}</td>
-                    </tr>
-                    <tr>
-                        <td>Opetusryhmä:</td>
-                        <td><a href={linkTo}>{this.state.user.groupname}</a></td>
-                    </tr>
-                    <tr>
-                        <td>Tehdyt tehtävät:</td>
+                        <td>{this.state.user.groupname}</td>
                         <td>
-                            {this.state.user.completedtasks !== undefined && <ul>{this.listCompletedTasks()}</ul>}
-                            {this.state.user.completedtasks === undefined && <p>{this.listCompletedTasks()}</p>}
+                            {this.state.user.completedmissions !== undefined && <ul>{this.listCompletedTasks()}</ul>}
+                            {this.state.user.completedmissions === undefined && <p>{this.listCompletedTasks()}</p>}
                         </td>
                     </tr>
                     </tbody>
                 </table>
-                <button href="/">Palaa etusivulle</button>
+                <button href="localhost:3000/">Palaa etusivulle</button>
             </div>
         );
     }

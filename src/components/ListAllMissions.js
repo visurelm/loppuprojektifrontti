@@ -36,11 +36,9 @@ class ListAllMissions extends Component {
             <div>
                 <table className='missions'>
                     <thead>
-                    <tr>
-                        <td>Mission ID</td>
-                        <td>Tehtävän nimi</td>
-                        <td>Komponentin nimi</td>
-                    </tr>
+                        <th>Mission ID</th>
+                        <th>Tehtävän nimi</th>
+                        <th>Komponentin nimi</th>
                     </thead>
                     <tbody>{tasks}</tbody>
                 </table>

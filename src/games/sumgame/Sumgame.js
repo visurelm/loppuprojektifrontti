@@ -27,8 +27,8 @@ class Number extends React.PureComponent {
 
 class Sumgame extends React.Component {
     static bgColors = {
-        playing: '#ccc',
-        won: 'green',
+        playing: '#6fe0c4',
+        won: '#00772a',
         lost: 'red',
     };
 
@@ -128,15 +128,15 @@ class Sumgame extends React.Component {
                         />
                     ))}
                 </div>
-                <div className="footer">
+                <div className="play">
                     {gameStatus === 'new' ? (
-                        <button onClick={this.startGame}>Aloita</button>
+                        <button onClick={this.startGame} className="playbuttons">Aloita</button>
                     ) : (
-                        <div className="timer-value">{remainingSeconds}</div>
+                        <div className="timer-value">Aikaa jäljellä: {remainingSeconds}</div>
                     )}
                     <div className="button" align-center="left">
                         {['won', 'lost'].includes(gameStatus) && (
-                            <button onClick={this.props.onPlayAgain} left class="active">Pelaa uudestaan</button>
+                            <button onClick={this.props.onPlayAgain} left class="active" className="playbuttons">Pelaa uudestaan</button>
                         )}
                     </div>
                 </div>

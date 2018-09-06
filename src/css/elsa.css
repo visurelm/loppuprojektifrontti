@@ -1,5 +1,5 @@
 body {
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
     text-align: center;
     font-family: Arial;
@@ -11,21 +11,73 @@ body {
     text-align: left;
 }
 
-.teachersview td, .teachersview th, .users td, .users th {
+strong, h1, h2, footer {
+    color: #E06F8B;
+}
+
+footer p {
+    margin-top: 8px;
+    font-size: small;
+    font-weight: bolder;
+    text-align: center;
+    font-family: Arial;
+}
+
+.number, .playbuttons {
+    margin: 1rem 5%;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 8px;
+    width: 250px;
+    height: 50px;
+    background-color: #E06F8B;
+    color: black;
+    font-size: 36px;
+    font-weight: bolder;
+    text-align: center
+}
+
+.playbuttons, .active {
+    margin: 1rem 5%;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 8px;
+    width: 150px;
+    height: 50px;
+    background-color: #E06F8B;
+    color: black;
+    font-size: 16px;
+    font-weight: bolder;
+    text-align: center
+}
+
+.play {
+    align-items: center;
+}
+
+.table{
+    width: 100%;
+}
+
+.teachersview td, .teachersview th, .users td, .users th, .missions td, .missions th, .ownpage th, .ownpage td {
     border: 1px solid #ddd;
     padding: 5px;
+    text-align: left;
+    color: black;
 }
 
-.teachersview tr:nth-child(odd), .users tr:nth-child(odd) {
-    background-color: #ddd;
+.teachersview tr:nth-child(odd), .users tr:nth-child(odd), .missions tr:nth-child(odd), .ownpage tr:nth-child(odd) {
+    background-color: #f5d3dc;
+    color: black;
     padding: 5px;
 }
 
-.teachersview tr:hover, .users tr:hover {
+.teachersview tr:hover, .users tr:hover, .missions tr:hover, .ownpage tr:hover {
     background-color: #E06F8B;
+    color: white;
 }
 
-.teachersview th, .users th  {
+.teachersview th, .users th, .missions th, .ownpage th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -51,12 +103,6 @@ body {
     max-height: 50px;
     border-radius: 25px;
 }
-/*.image {*/
-    /*align-items: center;*/
-    /*display: block;*/
-    /*width: 50px;*/
-    /*height: 50px;*/
-/*}*/
 
 .nav > li > a > img {
     alignment: center;
@@ -66,42 +112,13 @@ body {
     height: 50px;
 }
 
-/*.login {*/
-    /*margin-left: 20px;*/
-    /*display: block;*/
-    /*width: 50px;*/
-    /*height: 50px;*/
-/*}*/
-/*.logout {*/
-    /*margin-left: 20px;*/
-    /*display: block;*/
-    /*width: 50px;*/
-    /*height: 50px;*/
-/*}*/
 .image2 {
     display: block;
     width:  75px;
     height: 75px;
     margin-left: 10px;
 }
-/*.books {*/
-    /*display: block;*/
-    /*width: 50px;*/
-    /*height: 50px;*/
-    /*margin-left: -5px;*/
-/*}*/
-/*.teacher {*/
-    /*display: block;*/
-    /*width: 50px;*/
-    /*height: 50px;*/
-    /*margin-left: 30px;*/
-/*}*/
-/*.joystick {*/
-    /*display: block;*/
-    /*width: 50px;*/
-    /*height: 50px;*/
-    /*margin-left: 10px;*/
-/*}*/
+
 .span2 {
     margin-left: 10px;
 }
@@ -135,8 +152,25 @@ body {
     text-align: center;
 }
 
+.textarea{
+    width: 480px;
+}
+
+.navbar-nav{
+    float: inside;
+}
+
+.navbar {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
+
 .navbar-inverse {
-    align-content: center;
+    display: inline-block;
     background-color: #E06F8B;
     border-color: #E06F8B;
 }
@@ -193,7 +227,7 @@ body {
     color: #fff;
     background-color: #E06F8B;
 }
-@media (max-width: 480px) {
+@media (max-width: 750px) {
     .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
         alignment: center;
         border-color: #080808;
@@ -226,6 +260,21 @@ body {
         background-color: transparent;
     }
 }
+
+@media (min-width: 768px) {
+    .navbar-nav {
+        display: inline-block;
+        margin: 0;
+    }
+    .navbar-nav > li {
+        float: left;
+    }
+    .navbar-nav > li > a {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
 .navbar-inverse .navbar-link {
     alignment: center;
     color: #000000;
@@ -247,3 +296,15 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     color: #444;
 }
 
+/*.col-sm-2.sidenav {*/
+    /*position: relative;*/
+    /*width: 150px;*/
+    /*height: 150px;*/
+/*}*/
+
+.carousel {
+    width: auto;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
+}

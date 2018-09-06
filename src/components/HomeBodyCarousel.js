@@ -11,19 +11,19 @@ class HomeBodyCarousel extends Component{
             <div>
                 <Carousel>
                     <Carousel.Item>
-                        <img width={140} height={140} alt="Girl" src={Girl} />
+                        <img width={150} height={150} alt="Girl" src={Girl} className="carouselimg"/>
                         <Carousel.Caption>
                             {/*<h3>Elmo</h3>*/}
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img width={140} height={140} alt="Teacher" src={Teacher} />
+                        <img width={150} height={150} alt="Teacher" src={Teacher} className="carouselimg"/>
                         <Carousel.Caption>
                             {/*<h3>on</h3>*/}
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img width={140} height={140} alt="School" src={School} />
+                        <img width={150} height={150} alt="School" src={School} className="carouselimg"/>
                         <Carousel.Caption>
                             {/*<h4></h4>*/}
                         </Carousel.Caption>

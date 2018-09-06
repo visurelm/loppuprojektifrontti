@@ -40,6 +40,7 @@ export default class MakeMainRoutes extends React.Component {
                             <Route path="/SingUpPage" render={(props) => this.props.auth.isAuthenticated() &&
                                 <SignUpPage auth={this.props.auth} {...props} />}/>
                             <Route path="/callback" render={(props) => {this.props.handleAuthentication(props);
+
                                 return <LoadingCallback {...props} />
                             }}/>
                             <Route path="/groups/:groupid" render={(props)=><GroupView {...props}/>}/>
