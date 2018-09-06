@@ -65,7 +65,7 @@ export default class Auth {
         })
     }
 
-    signUpStudent(username, password, email) {
+    signUpStudent(username, password, email,group) {
         let emailtopush = email ? email : "elsa" + (this.randomint++) + "@elsa.fi"
         let added = this.auth0.signup({
             connection: "Username-Password-Authentication",
@@ -86,7 +86,7 @@ export default class Auth {
                     username: o.username,
                     role: "Student",
                     points: 0,
-                    groupid: 1,
+                    groupid: group,
                     completedmissions: [],
                     contactpersonuserid: 49,
                     authid: "auth0|" + o.Id

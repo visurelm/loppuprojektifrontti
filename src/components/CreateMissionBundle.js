@@ -19,12 +19,8 @@ class CreateMissionBundle extends Component {
         ev.stopPropagation();
         let id = this.state.missions[row].id;
         let name = this.state.missions[row].missionname;
-        console.log(id)
-        console.log(name)
         let bundlemissionids = this.state.newbundle.ids.filter(mission => mission != id);
-        console.log(bundlemissionids);
         let bundlemissionnames = this.state.newbundle.names.filter(mission => mission != name);
-        console.log(bundlemissionnames)
         this.setState({newbundle: {names: bundlemissionnames, ids: bundlemissionids}}, console.log(this.state));
     };
 
@@ -38,21 +34,17 @@ class CreateMissionBundle extends Component {
     deleteTargetGroup = (ev)=>{
         const row = ev.target.parentNode.parentNode.rowIndex;
         let groupid = this.state.mygroups[row].groupid;
-        let newGroups = this.state.targetgroup.filter(id=>id!=groupid);
+        let newGroups = this.state.targetgroup.filter(id=>id!==groupid);
         this.setState({targetgroup:newGroups});
-    }
+    };
 
     deleteFromNewBundle = (ev) => {
         const row = ev.target.parentNode.parentNode.rowIndex;
         ev.stopPropagation();
         let id = this.state.missions[row].id;
         let name = this.state.missions[row].missionname;
-        console.log(id)
-        console.log(name)
         let bundlemissionids = this.state.newbundle.ids.filter(mission => mission != id);
-        console.log(bundlemissionids);
         let bundlemissionnames = this.state.newbundle.names.filter(mission => mission != name);
-        console.log(bundlemissionnames)
         this.setState({newbundle: {names: bundlemissionnames, ids: bundlemissionids}}, console.log(this.state));
     };
 
@@ -83,7 +75,6 @@ class CreateMissionBundle extends Component {
                                 //TODO jos user.username==null niin ohjaa johonkin.
                                 if (user.username !== null && user.role === "Teacher") {
                                     axios.get("/groups")
-                                    // axios.get("/groups/teachersgroups/" + user.username)
                                         .then((r) => {
                                             this.setState({mygroups: r.data})
                                         })
