@@ -74,7 +74,7 @@ class StundentOwnPage extends Component {
                     </tr>
                     </tbody>
                 </table>
-                <button href="localhost:3000/">Palaa etusivulle</button>
+                <button href="localhost:3000/" className="playbuttons">Palaa etusivulle</button>
             </div>
         );
     }

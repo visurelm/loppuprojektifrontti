@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
-import '../../App.css';
+import '../../css/elsa.css';
 
 const randomNumberBetween = (min, max) =>
     Math.floor(Math.random() * (max - min + 1)) + min;
@@ -28,8 +28,8 @@ class Number extends React.PureComponent {
 class Sumgame extends React.Component {
     static bgColors = {
         playing: '#6fe0c4',
-        won: '#00772a',
-        lost: 'red',
+        won: '#8be06f',
+        lost: '#d22e57',
     };
 
     state = {
@@ -104,12 +104,7 @@ class Sumgame extends React.Component {
         if (sumSelected < this.target) {
             return 'playing';
         }
-        console.log("Pelin propsit",this.props)
-        if (sumSelected === this.target){this.props.addcompleted("Summapeli")}
         return sumSelected === this.target ? 'won' : 'lost';
-        // return false;
-        // sumSelected === this.target ? 'won' : 'lost';
-        // console.log(sumSelected);
     };
 
     render() {
@@ -137,11 +132,11 @@ class Sumgame extends React.Component {
                     {gameStatus === 'new' ? (
                         <button onClick={this.startGame} className="playbuttons">Aloita</button>
                     ) : (
-                        <div className="timer-value">Aikaa jäljellä: {remainingSeconds}</div>
+                        <div className="timer-value">{remainingSeconds}</div>
                     )}
                     <div className="button" align-center="left">
                         {['won', 'lost'].includes(gameStatus) && (
-                            <button onClick={this.props.onPlayAgain} left class="active" className="playbuttons">Pelaa uudestaan</button>
+                            <button onClick={this.props.onPlayAgain} left class="active">Pelaa uudestaan</button>
                         )}
                     </div>
                 </div>
@@ -170,7 +165,6 @@ class App extends Component {
                     challengeRange={[2, 9]}
                     initialSeconds={10}
                     onPlayAgain={this.resetGame}
-                    addcompleted={this.props.addcompleted}
                 />
             </div>
         );
