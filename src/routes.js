@@ -13,6 +13,7 @@ import SignUpPage from "./components/SignUpPage";
 import GroupView from "./components/GroupView";
 import MissionBundleView from "./components/MissionBundleView";
 import CMB from './components/CreateMissionBundle';
+import BackGround from './components/backgroundcarousel';
 
 
 export default class MakeMainRoutes extends React.Component {
@@ -39,6 +40,8 @@ export default class MakeMainRoutes extends React.Component {
                                 <CMB auth={this.props.auth} {...props} />}/>
                             <Route path="/SingUpPage" render={(props) => this.props.auth.isAuthenticated() &&
                                 <SignUpPage auth={this.props.auth} {...props} />}/>
+                            <Route path="/BackStory" render={(props) => this.props.auth.isAuthenticated() &&
+                                <BackGround auth={this.props.auth} {...props} />}/>
                             <Route path="/callback" render={(props) => {this.props.handleAuthentication(props);
 
                                 return <LoadingCallback {...props} />
