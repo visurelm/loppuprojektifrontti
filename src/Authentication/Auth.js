@@ -88,7 +88,7 @@ export default class Auth {
                     points: 0,
                     groupid: 1,
                     completedmissions: [],
-                    contactpersonuserid: 18,
+                    contactpersonuserid: 49,
                     authid: "auth0|" + o.Id
 
                 });

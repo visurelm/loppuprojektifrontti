@@ -13,9 +13,36 @@ import SignUpPage from "./components/SignUpPage";
 import GroupView from "./components/GroupView";
 import MissionBundleView from "./components/MissionBundleView";
 import CMB from './components/CreateMissionBundle';
+import axios from "axios/index";
+import ChooseGame from "./components/ChooseGame";
 
 
 export default class MakeMainRoutes extends React.Component {
+
+    state = {user: {}};
+
+    componentWillMount() {
+        axios.defaults.headers.common = {
+            Authorization: "Bearer " + localStorage.getItem("access_token")
+        };
+        axios.get("/api/user")
+            .then(res => {
+                axios.get("/users/" + res.data.name)
+                    .then((r) => {
+                        console.log(r.data)
+                        this.setState({user: r.data});
+                    })
+            });
+    }
+
+    addCompleted = (task) => {
+        axios.defaults.headers.common = {
+            Authorization: "Bearer " + localStorage.getItem("access_token")
+        };
+        let toAdd = [task];
+        console.log("Lähetetään",)
+        axios.put("/users/" + this.state.user.authid + "/completed",{completedmissions:toAdd});
+    };
 
     render() {
         return (
@@ -34,18 +61,21 @@ export default class MakeMainRoutes extends React.Component {
                             <Route exact path="/games" render={(props) => this.props.auth.isAuthenticated() &&
                                 <Games auth={this.props.auth} {...props} />}/>
                             <Route path="/games/sumgame" render={(props) => this.props.auth.isAuthenticated() &&
-                                <SumGame auth={this.props.auth} {...props} />}/>
-                            <Route exact path="/CreateMissionBundle" render={(props) => this.props.auth.isAuthenticated() &&
-                                <CMB auth={this.props.auth} {...props} />}/>
+                                <SumGame auth={this.props.auth} addcompleted={this.addCompleted} {...props} />}/>
+                            <Route exact path="/CreateMissionBundle"
+                                   render={(props) => this.props.auth.isAuthenticated() &&
+                                       <CMB auth={this.props.auth} {...props} />}/>
                             <Route path="/SingUpPage" render={(props) => this.props.auth.isAuthenticated() &&
                                 <SignUpPage auth={this.props.auth} {...props} />}/>
-                            <Route path="/callback" render={(props) => {this.props.handleAuthentication(props);
+                            <Route path="/callback" render={(props) => {
+                                this.props.handleAuthentication(props);
 
                                 return <LoadingCallback {...props} />
                             }}/>
-                            <Route path="/groups/:groupid" render={(props)=><GroupView {...props}/>}/>
-                            <Route path="/missionbundle/:id" render={(props)=><MissionBundleView {...props}/>}/>
-                            <Route exact path="/jermu/add" render={(props)=><SignUpPage auth={this.props.auth} {...props}/>}/>
+                            <Route path="/groups/:groupid" render={(props) => <GroupView {...props}/>}/>
+                            <Route path="/missionbundle/:id" render={(props) => <MissionBundleView {...props}/>}/>
+                            <Route exact path="/jermu/add"
+                                   render={(props) => <SignUpPage auth={this.props.auth} {...props}/>}/>
                             <Route component={NotFound}/>
                         </Switch>
                     </div>

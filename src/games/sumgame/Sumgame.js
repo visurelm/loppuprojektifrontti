@@ -104,7 +104,12 @@ class Sumgame extends React.Component {
         if (sumSelected < this.target) {
             return 'playing';
         }
+        console.log("Pelin propsit",this.props)
+        if (sumSelected === this.target){this.props.addcompleted("Summapeli")}
         return sumSelected === this.target ? 'won' : 'lost';
+        // return false;
+        // sumSelected === this.target ? 'won' : 'lost';
+        // console.log(sumSelected);
     };
 
     render() {
@@ -165,6 +170,7 @@ class App extends Component {
                     challengeRange={[2, 9]}
                     initialSeconds={10}
                     onPlayAgain={this.resetGame}
+                    addcompleted={this.props.addcompleted}
                 />
             </div>
         );
