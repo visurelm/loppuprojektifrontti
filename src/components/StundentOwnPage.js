@@ -56,18 +56,16 @@ class StundentOwnPage extends Component {
         return (
             <div>
                 <h3>Käyttäjän omat tiedot</h3>
-                <table>
+                <table className="ownpage">
+                    <thead>
+                        <th>Nimi</th>
+                        <th>Opetusryhmä</th>
+                        <th>Tehdyt tehtävät</th>
+                    </thead>
                     <tbody>
                     <tr>
-                        <th>Nimi:</th>
                         <td>{this.state.user.username}</td>
-                    </tr>
-                    <tr>
-                        <th>Opetusryhmä:</th>
                         <td>{this.state.user.groupname}</td>
-                    </tr>
-                    <tr>
-                        <th>Tehdyt tehtävät:</th>
                         <td>
                             {this.state.user.completedmissions !== undefined && <ul>{this.listCompletedTasks()}</ul>}
                             {this.state.user.completedmissions === undefined && <p>{this.listCompletedTasks()}</p>}

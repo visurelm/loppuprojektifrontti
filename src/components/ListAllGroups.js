@@ -29,9 +29,9 @@ class ListAllGroups extends Component {
             let linkTo = "/groups/" + groups.groupid;
             return (
                 <tr key={groups.groupid}>
-                    <td>{groups.groupid}</td>
+                    {/*<td>{groups.groupid}</td>*/}
                     <td><a href={linkTo}>{groups.groupname} </a></td>
-                    <td>{groups.missionscores}</td>
+                    {/*<td>{groups.missionscores}</td>*/}
 
                 </tr>)
         });
@@ -39,9 +39,9 @@ class ListAllGroups extends Component {
             <div>
                 <table className='teachersview'>
                     <thead>
-                        <th>Ryhmän ID</th>
+                        {/*<th>Ryhmän ID</th>*/}
                         <th>Ryhmän nimi</th>
-                        {/*<td>Ryhmän pisteet</td>*/}
+                        {/*<th>Ryhmän pisteet</th>*/}
                     </thead>
                     <tbody>{groupmap}</tbody>
                 </table>

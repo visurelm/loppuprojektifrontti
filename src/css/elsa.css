@@ -51,21 +51,33 @@ footer p {
     text-align: center
 }
 
-.teachersview td, .teachersview th, .users td, .users th, .missions td, .missions th {
+.play {
+    align-items: center;
+}
+
+.table{
+    width: 100%;
+}
+
+.teachersview td, .teachersview th, .users td, .users th, .missions td, .missions th, .ownpage th, .ownpage td {
     border: 1px solid #ddd;
     padding: 5px;
+    text-align: left;
+    color: black;
 }
 
-.teachersview tr:nth-child(odd), .users tr:nth-child(odd), .missions tr:nth-child(odd) {
+.teachersview tr:nth-child(odd), .users tr:nth-child(odd), .missions tr:nth-child(odd), .ownpage tr:nth-child(odd) {
     background-color: #f5d3dc;
+    color: black;
     padding: 5px;
 }
 
-.teachersview tr:hover, .users tr:hover, .missions tr:hover {
+.teachersview tr:hover, .users tr:hover, .missions tr:hover, .ownpage tr:hover {
     background-color: #E06F8B;
+    color: white;
 }
 
-.teachersview th, .users th, .missions th  {
+.teachersview th, .users th, .missions th, .ownpage th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;

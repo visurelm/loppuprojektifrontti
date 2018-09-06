@@ -18,7 +18,7 @@ class StoryOfElsa extends Component{
                     helppokäyttöinen oppimisen ympäristö esikouluikäiselle lapselle.
                     <br/><br/>
                     ELSA-projekti lähti liikkeelle kolmevuotiaan Elsan näkökulmasta.
-                    Elsan isä on opiskellut kesällä 2018 <a href="https://www.academy.fi">Academy</a>n Java -ohjelmoinnin kurssilla.
+                    Elsan isä on opiskellut kesällä 2018 <a href="https://www.academy.fi" className="academy">Academy</a>n Java -ohjelmoinnin kurssilla.
                     Elsan isän alkuperäinen ajatus oli toteuttaa helppokäyttöisiä pelejä lapsen
                     kehitystä tukemaan. Idea laajeni sittemmin oppimisympäristön toteutukseen.
                     <br/><br/>
