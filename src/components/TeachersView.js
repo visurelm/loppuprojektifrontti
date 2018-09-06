@@ -17,7 +17,7 @@ class TeachersView extends Component {
                 <a href="/SingUpPage" ><img src={AddUser} className="image2"/><span className="span2">Lisää käyttäjä</span></a>
 
                 <ListAllGroups/>
-                <ListAllMissions/>
+                {/*<ListAllMissions/>*/}
             </div>
         );
     }
