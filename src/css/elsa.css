@@ -118,7 +118,7 @@ input{
 }
 
 .image2 {
-    display: block;
+    display: inline-block;
     width:  75px;
     height: 75px;
     margin-left: 10px;
