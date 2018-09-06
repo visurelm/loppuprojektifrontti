@@ -12,10 +12,14 @@ class TeachersView extends Component {
 
         return (
             <div>
-
-                <a href="/CreateMissionBundle" ><img src={CMB} className="image2"/><span className="span2">Lisää tehtävänippu</span></a>
-                <a href="/SingUpPage" ><img src={AddUser} className="image2"/><span className="span2">Lisää käyttäjä</span></a>
-
+                <div>
+                    <a href="/CreateMissionBundle"><img src={CMB} className="image2"/></a>
+                <p className="image2">Lisää tehtävänippu</p>
+                </div>
+                <div>
+                <a href="/SingUpPage"><img src={AddUser} className="image2"/></a>
+                <p className="image2">Lisää käyttäjä</p>
+                </div>
                 <ListAllGroups/>
                 {/*<ListAllMissions/>*/}
             </div>
