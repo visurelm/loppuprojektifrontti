@@ -25,10 +25,10 @@ export default class SignUpPage extends Component {
 
     render() {
         return <div>
-            <input onChange={this.typeEmail} placeholder="Sähköposti" />
-            <input onChange={this.typeUsername} placeholder="Käyttäjänimi" required="required" minLength="4"/>
-            <input onChange={this.typePassword} placeholder="Salasana" type="password" required="required" minLength="4"/>
-            <button onClick={this.send}>Rekisteröi</button>
+            <input onChange={this.typeEmail} placeholder="Sähköposti" /><br/>
+            <input onChange={this.typeUsername} placeholder="Käyttäjänimi" required="required" minLength="4"/><br/>
+            <input onChange={this.typePassword} placeholder="Salasana" type="password" required="required" minLength="4"/><br/>
+            <button onClick={this.send} className="playbuttons">Rekisteröi</button>
         </div>
     };
 }
