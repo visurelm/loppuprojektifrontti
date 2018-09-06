@@ -4,7 +4,8 @@ class Elmo extends Component{
     render() {
         return (
             <div>
-                <p>Elmo</p>
+                <p>Elmolla oli aiempaa kokemusta myynnin- ja IT-tuen tehtävistä. Vapaa-aikanaan Elmo viihtyy vuoroin
+                tiiviistikin tietokoneen parissa, vuoroin esimerkiksi vesillä. </p>
             </div>
         );
     }

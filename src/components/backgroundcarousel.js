@@ -8,37 +8,23 @@ class backgroundcarousel extends Component{
 
     render() {
         return (
-            <div>
-                <Carousel>
-                    <Carousel.Item>
-                        <Jouni/>
-                        {/*<img width={150} height={150} alt="Girl" src={Girl} className="carouselimg"/>*/}
-                        <Carousel.Caption>
-                            {/*<h3>Elmo</h3>*/}
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <Elmo/>
-                        {/*<img width={150} height={150} alt="Teacher" src={Teacher} className="carouselimg"/>*/}
-                        <Carousel.Caption>
-                            {/*<h3>on</h3>*/}
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <Reija/>
-                        {/*<img width={150} height={150} alt="School" src={School} className="carouselimg"/>*/}
-                        <Carousel.Caption>
-                            {/*<h4></h4>*/}
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <Miika/>
-                        {/*<img width={150} height={150} alt="School" src={School} className="carouselimg"/>*/}
-                        <Carousel.Caption>
-                            {/*<h4></h4>*/}
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                </Carousel>;
+            <div className="backstories">
+                <h2>ELSAn tekijöiden tarinat</h2>
+                <br/>
+                <h4>Jouni Kari</h4>
+                <Jouni/>
+                <br/>
+                <h4>Elmo Visuri</h4>
+                <Elmo/>
+                <br/>
+                <h4>Reija Jokinen</h4>
+                <Reija/>
+                <br/>
+                <h4>Miika Huhtanen</h4>
+                <Miika/>
+                <br/>
+                <h4>undefined</h4>
+                <p>undefined refers to something that lacks definition. Important team member in JERMu.</p>
             </div>
         );
     }

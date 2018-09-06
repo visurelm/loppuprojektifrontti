@@ -12,16 +12,16 @@ class HomeBody extends Component {
                 <body>
                 <div className="container-fluid text-center">
                     <div className="row content">
-                        <div className="col-sm-2 sidenav">
-                            <CarouselCubes/>
-                        </div>
+                        {/*<div className="col-sm-2 sidenav">*/}
+                            {/*<CarouselCubes/>*/}
+                        {/*</div>*/}
                         <div className="col-sm-8 text-left">
                             <h1 align="center">Tervetuloa!</h1>
                             <StoryOfElsa/>
                         </div>
-                        <div className="col-sm-2 sidenav">
-                            <Carousel/>
-                        </div>
+                        {/*<div className="col-sm-2 sidenav">*/}
+                            {/*<Carousel/>*/}
+                        {/*</div>*/}
                     </div>
                 </div>
 

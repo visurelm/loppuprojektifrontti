@@ -1,5 +1,5 @@
 body {
-    max-width: 900px;
+    max-width: 700px;
     margin: auto;
     text-align: center;
     font-family: Arial;
@@ -152,8 +152,8 @@ footer p {
     text-align: center;
 }
 
-.textarea{
-    width: 480px;
+.textarea, p {
+    width: 100%;
 }
 
 .navbar-nav{
@@ -302,9 +302,20 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     /*height: 150px;*/
 /*}*/
 
-.carousel {
+.backgroundcarousel {
     width: auto;
-    height: auto;
-    max-width: 150px;
-    max-height: 150px;
+    height: 100px;
+}
+
+.row-content{
+    width: 100%;
+}
+
+.col-sm-8 {
+    position: center;
+    width: 100%;
+}
+
+.backstories {
+    text-align: left;
 }
