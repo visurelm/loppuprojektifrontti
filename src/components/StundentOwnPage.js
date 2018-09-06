@@ -50,6 +50,7 @@ class StundentOwnPage extends Component {
 
 
     render() {
+        let linkTo = "/groups/" + this.state.user.groupid;
 
         return (
             <div>
@@ -62,7 +63,7 @@ class StundentOwnPage extends Component {
                     </tr>
                     <tr>
                         <td>Opetusryhmä:</td>
-                        <td>{this.state.user.groupname}</td>
+                        <td><a href={linkTo}>{this.state.user.groupname}</a></td>
                     </tr>
                     <tr>
                         <td>Tehdyt tehtävät:</td>
