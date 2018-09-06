@@ -18,6 +18,7 @@ export default class SignUpPage extends Component {
 
     send = ()=>{
         this.props.auth.signUpStudent(this.state.username,this.state.password,this.state.email);
+
     };
 
 
