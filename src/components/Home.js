@@ -9,7 +9,7 @@ class Home extends Component {
 
             <div className="Homepage">
 
-                {!this.props.auth.isAuthenticated() && <h1 align="center">Moro, kirjauduppa &uarr; !</h1>}
+                {!this.props.auth.isAuthenticated() && <h1 align="center">Kirjaudu ensin sisään!</h1>}
                 <HomeBoy/>
             </div>
         );

@@ -25,7 +25,6 @@ class HomeBody extends Component {
                         {/*</div>*/}
                     </div>
                 </div>
-                    <Elsafooter/>
                 </body>
             </div>
         );
