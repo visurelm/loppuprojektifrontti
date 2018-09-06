@@ -82,7 +82,8 @@ class CreateMissionBundle extends Component {
                                 console.log("Käyttäjä", user.role)
                                 //TODO jos user.username==null niin ohjaa johonkin.
                                 if (user.username !== null && user.role === "Teacher") {
-                                    axios.get("/groups/teachersgroups/" + user.username)
+                                    axios.get("/groups")
+                                    // axios.get("/groups/teachersgroups/" + user.username)
                                         .then((r) => {
                                             this.setState({mygroups: r.data})
                                         })
@@ -97,13 +98,13 @@ class CreateMissionBundle extends Component {
         this.setState({name: ev.target.value});
     };
 
-    send = ()=>{
+    send = async ()=>{
         let toSend = {belongstogroups:this.state.targetgroup,listofmissions:this.state.newbundle.ids,bundlename:this.state.name};
         axios.defaults.headers.common = {
             Authorization: "Bearer " + localStorage.getItem("access_token")
         };
-        axios.post("/missionbundles",toSend)
-        .then(r=>{console.log(r.data)})
+        await axios.post("/missionbundles",toSend)
+        .then(()=>{window.location="/TeachersView"})
     }
 
 

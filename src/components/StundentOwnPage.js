@@ -52,6 +52,7 @@ class StundentOwnPage extends Component {
 
 
     render() {
+        let linkTo = "/groups/" + this.state.user.groupid;
 
         return (
             <div>
