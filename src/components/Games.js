@@ -7,8 +7,8 @@ class games extends Component {
     render() {
         return (
             <div>
-                <button onClick={SumGame} className="button">Summapeli</button>
-                <button onClick={SumGame} className="button">Summapeli</button>
+                <button onClick={SumGame} className="playbuttons">Summapeli</button>
+                <button onClick={SumGame} className="playbuttons">Summapeli</button>
             </div>
         );
     }

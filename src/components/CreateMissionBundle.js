@@ -148,30 +148,26 @@ class CreateMissionBundle extends Component {
                     <h3>Ryhmä</h3>
                     <table><tbody> {groupsDropdown}</tbody></table>
                 </div>
-                <div className="Missions">
-                    <table className='CreateMissionBundle'>
+                <div className="missions">
+                    <table>
                         <thead>
-                        <th>
-                            {/*<td>Tehtävän ID</td>*/}
-                            <td>Tehtävän nimi</td>
-                            {/*<td>sdngoiah</td>*/}
-                        </th>
+                            {/*<th>Tehtävän ID</th>*/}
+                            <th>Tehtävän nimi</th>
+                            {/*<th>sdngoiah</th>*/}
                         </thead>
                         <tbody>{missionsmap}</tbody>
                     </table>
                 </div>
-                <div className="newBundle">
+                <div className="newbundle">
                     <h3>Valitut tehtävät</h3>
                     <table>
                         <thead>
-                        <th>
-                            <td>Tehtävän nimi</td>
-                        </th>
+                            <th>Tehtävän nimi</th>
                         </thead>
                         <tbody>{bundlemap}</tbody>
                     </table>
                 </div>
-                <button onClick={this.send}>Luo tehtävänippu</button>
+                <button onClick={this.send} className="playbuttons">Luo tehtävänippu</button>
 
 
             </div>

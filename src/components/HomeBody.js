@@ -3,6 +3,7 @@ import '../App.css';
 import Carousel from './HomeBodyCarousel';
 import CarouselCubes from './HomeBodyCarouselCubes';
 import StoryOfElsa from './StoryOfElsa';
+import Elsafooter from './elsafooter'
 
 
 class HomeBody extends Component {
@@ -24,11 +25,6 @@ class HomeBody extends Component {
                         {/*</div>*/}
                     </div>
                 </div>
-
-                <footer className="container-fluid text-center">
-                    <br/>
-                    <p>@ 2018 JERMu: Jouni, Elmo, Reija, Miika, undefined</p>
-                </footer>
                 </body>
             </div>
         );
