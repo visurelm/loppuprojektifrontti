@@ -1,5 +1,5 @@
 body {
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
     text-align: center;
     font-family: Arial;
@@ -51,21 +51,21 @@ footer p {
     text-align: center
 }
 
-.teachersview td, .teachersview th, .users td, .users th {
+.teachersview td, .teachersview th, .users td, .users th, .missions td, .missions th {
     border: 1px solid #ddd;
     padding: 5px;
 }
 
-.teachersview tr:nth-child(odd), .users tr:nth-child(odd) {
+.teachersview tr:nth-child(odd), .users tr:nth-child(odd), .missions tr:nth-child(odd) {
     background-color: #f5d3dc;
     padding: 5px;
 }
 
-.teachersview tr:hover, .users tr:hover {
+.teachersview tr:hover, .users tr:hover, .missions tr:hover {
     background-color: #E06F8B;
 }
 
-.teachersview th, .users th  {
+.teachersview th, .users th, .missions th  {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -140,6 +140,10 @@ footer p {
     text-align: center;
 }
 
+.textarea{
+    width: 480px;
+}
+
 .navbar-nav{
     float: inside;
 }
@@ -211,7 +215,7 @@ footer p {
     color: #fff;
     background-color: #E06F8B;
 }
-@media (max-width: 480px) {
+@media (max-width: 750px) {
     .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
         alignment: center;
         border-color: #080808;
@@ -280,3 +284,15 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     color: #444;
 }
 
+/*.col-sm-2.sidenav {*/
+    /*position: relative;*/
+    /*width: 150px;*/
+    /*height: 150px;*/
+/*}*/
+
+.carousel {
+    width: auto;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
+}

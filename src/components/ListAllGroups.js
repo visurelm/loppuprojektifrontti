@@ -39,11 +39,9 @@ class ListAllGroups extends Component {
             <div>
                 <table className='teachersview'>
                     <thead>
-                    <th>
-                        <td>Ryhmän ID</td>
-                        <td>Ryhmän nimi</td>
+                        <th>Ryhmän ID</th>
+                        <th>Ryhmän nimi</th>
                         {/*<td>Ryhmän pisteet</td>*/}
-                    </th>
                     </thead>
                     <tbody>{groupmap}</tbody>
                 </table>

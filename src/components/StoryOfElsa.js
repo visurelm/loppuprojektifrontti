@@ -3,14 +3,15 @@ import React,{Component} from 'react';
 class StoryOfElsa extends Component{
     render() {
         return (
-            <div>
+            <div className="textarea">
                 <h2 align="center">ELSAn tarina</h2>
-                <p>
+                    <h4>
                     <strong>E</strong> sikouluikäisen <br/>
                     <strong>L</strong> apsen <br/>
                     <strong>S</strong> aitti<br/>
-                    <strong>A</strong> lkuoppimiseen<br/>
+                    <strong>A</strong> lkuoppimiseen<br/></h4>
                     <br/>
+                    <p>
                     Lapsen oppimista edistäviä tehtäviä kootusti ja helposti laajennettavana.
                     <br/><br/>
                     Tavoitteenamme on toteuttaa helpolla tavalla laajennettava ja turvallinen ja
